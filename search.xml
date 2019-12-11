@@ -26,7 +26,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># rpm -Uvh mysql57-community-release-el7-9.noarch.rpm</span><br></pre></td></tr></table></figure>
 
 <p>接下来就可以正式安装mysql了,但是呢?如果直接安装默认的是8.0版本的,我在这里演需要安装5.7版本.如果需要的就是8.0版本可以跳过下一步</p>
-<p><strong>修改默认安装mysql5.7版本</strong><br>修改配置</p>
+<p><strong>修改安装默认为mysql5.7版本</strong><br>修改配置</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># vi /etc/yum.repos.d/mysql-community.repo</span><br></pre></td></tr></table></figure>
 
 <p>这里我用的是mysql5.7的所以把5.7的enabled=1,把8.0的enabled=0 </p>
@@ -134,7 +134,8 @@
         <category>linux</category>
       </categories>
       <tags>
-        <tag>linux,mysql</tag>
+        <tag>linux</tag>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -363,11 +364,11 @@
 
 ]]></content>
       <categories>
-        <category>java</category>
         <category>springBoot</category>
       </categories>
       <tags>
-        <tag>springBoot,异常</tag>
+        <tag>linux</tag>
+        <tag>异常</tag>
       </tags>
   </entry>
   <entry>
