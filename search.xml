@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>linux之CentOS7安装mysql</title>
+    <url>/linux/CentOS7%E5%AE%89%E8%A3%85mysql.html</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>今天我来给大家介绍在linux环境中如果安装mysql,我的操作系统是centos7.5,所有下面我所有操作步骤都在centos7.5环境下完成的。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="检查系统是否安装mysql"><a href="#检查系统是否安装mysql" class="headerlink" title="检查系统是否安装mysql"></a>检查系统是否安装mysql</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># rpm -qa | grep mysql</span><br></pre></td></tr></table></figure>
+
+<p> 如果返回空值，说明没有安装<br> 从最新版本的linux系统开始，默认的是 Mariadb而不是mysql！</p>
+<h2 id="检查系统是有wget命令"><a href="#检查系统是有wget命令" class="headerlink" title="检查系统是有wget命令"></a>检查系统是有wget命令</h2><p>在命令行中输入:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># wget</span><br></pre></td></tr></table></figure>
+
+<p>如果出现 <code>未找到命令</code>,再执行下面命令:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># yum -y install wget</span><br></pre></td></tr></table></figure>
+
+<h2 id="下载并安装MySQL官方的-Yum-Repository"><a href="#下载并安装MySQL官方的-Yum-Repository" class="headerlink" title="下载并安装MySQL官方的 Yum Repository"></a>下载并安装MySQL官方的 Yum Repository</h2><h4 id="1-找到mysql官方的rmp文件"><a href="#1-找到mysql官方的rmp文件" class="headerlink" title="1.找到mysql官方的rmp文件"></a>1.找到mysql官方的rmp文件</h4><p>到这里找到对应系统的版本，<a href="https://dev.mysql.com/downloads/repo/yum/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/repo/yum/</a><br>点击<code>Download</code>，到了下载页面有两个大的按钮，在两个按钮下找到<br><code>No thanks, just start my download.</code>右键复制链接地址。<br>黏贴后就是<a href="https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm" target="_blank" rel="noopener">https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</a></p>
+<h4 id="2-下载rpm文件并安装"><a href="#2-下载rpm文件并安装" class="headerlink" title="2.下载rpm文件并安装"></a>2.下载rpm文件并安装</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># wget https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># rpm -Uvh mysql57-community-release-el7-9.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<p>接下来就可以正式安装mysql了,但是呢?如果直接安装默认的是8.0版本的,我在这里演需要安装5.7版本.如果需要的就是8.0版本可以跳过下一步</p>
+<h4 id="3-修改默认安装mysql5-7版本"><a href="#3-修改默认安装mysql5-7版本" class="headerlink" title="3.修改默认安装mysql5.7版本"></a>3.修改默认安装mysql5.7版本</h4><p>修改配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># vi /etc/yum.repos.d/mysql-community.repo</span><br></pre></td></tr></table></figure>
+
+<p>这里我用的是mysql5.7的所以把5.7的enabled=1,把8.0的enabled=0 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Enable to use MySQL 5.7</span><br><span class="line">[mysql57-community]</span><br><span class="line">name=MySQL 5.7 Community Server</span><br><span class="line">baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/7/$basearch/</span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql</span><br><span class="line"></span><br><span class="line">[mysql80-community]</span><br><span class="line">name=MySQL 8.0 Community Server</span><br><span class="line">baseurl=http://repo.mysql.com/yum/mysql-8.0-community/el/7/$basearch/</span><br><span class="line">enabled=0</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql</span><br></pre></td></tr></table></figure>
+
+<p>修改好保存退出</p>
+<h4 id="4-安装mysql"><a href="#4-安装mysql" class="headerlink" title="4.安装mysql"></a>4.安装mysql</h4><p>执行:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum -y install mysql mysql-server mysql-devel</span><br></pre></td></tr></table></figure>
+
+<p>这步可能会花些时间，安装完成后就会覆盖掉之前的mariadb</p>
+<h2 id="MySQL数据库设置"><a href="#MySQL数据库设置" class="headerlink" title="MySQL数据库设置"></a>MySQL数据库设置</h2><h4 id="首先启动MySQL："><a href="#首先启动MySQL：" class="headerlink" title="首先启动MySQL："></a>首先启动MySQL：</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># systemctl start  mysqld.service</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看MySQL运行状态："><a href="#查看MySQL运行状态：" class="headerlink" title="查看MySQL运行状态："></a>查看MySQL运行状态：</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># systemctl status mysqld.service</span><br></pre></td></tr></table></figure>
+
+<p>mysql正常运行状态如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysqld.service - MySQL Server</span><br><span class="line">   Loaded: loaded (/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled)</span><br><span class="line">   Active: active (running) since Wed 2019-12-11 09:31:06 CST; 10s ago</span><br><span class="line">     Docs: man:mysqld(8)</span><br><span class="line">           http://dev.mysql.com/doc/refman/en/using-systemd.html</span><br><span class="line">  Process: 2712 ExecStart=/usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid $MYSQLD_OPTS (code=exited, status=0/SUCCESS)</span><br><span class="line">  Process: 2662 ExecStartPre=/usr/bin/mysqld_pre_systemd (code=exited, status=0/SUCCESS)</span><br><span class="line"> Main PID: 2715 (mysqld)</span><br><span class="line">   CGroup: /system.slice/mysqld.service</span><br><span class="line">           └─2715 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>补上一个命令<br>重新启动mysql服务：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># systemctl restart  mysqld.service</span><br></pre></td></tr></table></figure>
+
+<h4 id="日志文件中找出mysql的账号和登录密码"><a href="#日志文件中找出mysql的账号和登录密码" class="headerlink" title="日志文件中找出mysql的账号和登录密码"></a>日志文件中找出mysql的账号和登录密码</h4><p>此时MySQL已经开始正常运行，不过要想进入MySQL还得先找出此时root用户的密码，通过如下命令可以在日志文件中找出密码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">```</span><br><span class="line"># grep &quot;password&quot; /var/log/mysqld.log</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2019-12-11T01:31:02.794484Z 1 [Note] A temporary password is generated for root@localhost: bpi+UkOPe7d/</span><br></pre></td></tr></table></figure>
+
+<p>root@localhost: 后面的<code>bpi+UkOPe7d/</code>就是密码了。</p>
+<h4 id="进入数据库修改密码"><a href="#进入数据库修改密码" class="headerlink" title="进入数据库修改密码"></a>进入数据库修改密码</h4><p>如下命令进入数据库：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># mysql -uroot –p</span><br></pre></td></tr></table></figure>
+
+<p>输入初始密码，此时不能做任何事情，因为MySQL默认必须修改密码之后才能操作数据库<br>修改密码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt; ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;123456&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>这里有个问题，新密码设置的时候如果设置的过于简单会报错：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ERROR 1819 (HY000): Your password does not satisfy the current policy requirements</span><br></pre></td></tr></table></figure>
+
+<p>原因是因为MySQL有密码设置的规范，具体是与validate_password_policy的值有关,<br>修改密码规则：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt; set global validate_password_policy=0;</span><br><span class="line">mysql&gt; set global validate_password_length=1;</span><br></pre></td></tr></table></figure>
+
+<p>此时密码就可以设置的很简单，例如1234之类的。到此数据库的密码设置就完成了。<br>退出mysql:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt;exit;</span><br></pre></td></tr></table></figure>
+
+<p>再登录试试修改密码是否成功：登录Mysql：<code>输入mysql -u帐号 -p密码</code> 这是登陆</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># mysql –uroot –p123456</span><br></pre></td></tr></table></figure>
+
+<p>但此时还有一个问题，就是因为安装了Yum Repository，以后每次yum操作都会自动更新，需要把这个卸载掉：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># yum -y mysql80-community-release.noarch</span><br></pre></td></tr></table></figure>
+
+<p>此时才算真的完成了。</p>
+<h2 id="检查mysql端口是否开启"><a href="#检查mysql端口是否开启" class="headerlink" title="检查mysql端口是否开启"></a>检查mysql端口是否开启</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># firewall-cmd --query-port=3306/tcp</span><br></pre></td></tr></table></figure>
+
+<p>查看3306端口是否开启，yes表示开启，no表示未开启。还有一种情况，防火墙没有打开如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">FirewallD is not running</span><br></pre></td></tr></table></figure>
+
+<p>看需要双方开启防火墙<br>启动防火墙：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># systemctl start firewalld</span><br></pre></td></tr></table></figure>
+
+<p>开机启用：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># systemctl enable firewalld</span><br></pre></td></tr></table></figure>
+
+<p>永久开启3306端口：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># firewall-cmd --zone=public --add-port=3306/tcp --permanent</span><br></pre></td></tr></table></figure>
+
+<p>重新载入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<h2 id="mysql权限与远程连接"><a href="#mysql权限与远程连接" class="headerlink" title="mysql权限与远程连接"></a>mysql权限与远程连接</h2><h4 id="创建用户：以root用户登录到数据库进行用户创建"><a href="#创建用户：以root用户登录到数据库进行用户创建" class="headerlink" title="创建用户：以root用户登录到数据库进行用户创建"></a>创建用户：以root用户登录到数据库进行用户创建</h4><p>命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE USER &apos;username&apos;@&apos;host&apos; IDENTIFIED BY &apos;password&apos;;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>username——将要创建的用户名；<br> host——指定该用户在哪个主机上可以登录，”localhost”指该用户只能在本地登录，不能在另外一台机器上远程登录，如果想远程登录，将”localhost”改为”%”，表示在任何一台电脑上都可以登录；也可以指定某台机器可以远程登录；<br>password——该用户的登录密码，密码可以为空，若为空则该用户可以不需要密码登录服务器。</p>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE USER &apos;test_admin&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;admin@123_S&apos;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="授权：以root用户登录到数据库进行授权"><a href="#授权：以root用户登录到数据库进行授权" class="headerlink" title="授权：以root用户登录到数据库进行授权"></a>授权：以root用户登录到数据库进行授权</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GRANT privileges ON databasename.tablename TO &apos;username&apos;@&apos;host&apos;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>privileges——用户的操作权限，如SELECT等。如果授予所有权限则使用ALL。<br> databasename——数据库名称。tablename——表名。如果要给该用户授予对所有数据库和表的相应操作权限则可用<em>表示，例如</em>.*<br> flush privileges;表示刷新权限</p>
+</blockquote>
+<p> 例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;test_amin&apos;@&apos;%&apos; IDENTIFIED BY &apos;admin@123_S&apos; WITH GRANT OPTION;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+<h4 id="撤销用户权限"><a href="#撤销用户权限" class="headerlink" title="撤销用户权限"></a>撤销用户权限</h4><p>命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">REVOKE privilege ON databasename.tablename FROM &apos;username&apos;@&apos;host&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">REVOKE SELECT ON *.* FROM &apos;test_amin&apos;@&apos;%&apos;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除账户及权限："><a href="#删除账户及权限：" class="headerlink" title="删除账户及权限："></a>删除账户及权限：</h4><p>命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">drop user &apos;username&apos;@&apos;host&apos;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看用户的授权"><a href="#查看用户的授权" class="headerlink" title="查看用户的授权"></a>查看用户的授权</h4><p>命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SHOW GRANTS FOR &apos;username&apos;@&apos;host&apos;;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux,mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VMware三种网络连接模式</title>
+    <url>/article/VMware%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E6%A8%A1%E5%BC%8F.html</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>我们使用VMware虚拟软件创建虚拟机的时候，会对<code>网络适配器</code>进行配置，但是它会有三种网络连接方式：桥接方式、NAT模式、仅主机模式。下面我给大家介绍一下三种网络连接的区别。</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="桥接模式"><a href="#桥接模式" class="headerlink" title="桥接模式"></a>桥接模式</h3><p>桥接模式，虚拟机的虚拟网络适配器与主机的物理网络适配器进行交接，机的物理网络适配器和虚拟网络适配器就相当于<strong>处于同一个网段</strong>，虚拟机中的虚拟网络适配器可通过主机中的物理网络适配器<strong>直接访问到外部网络</strong>。可以理解成，在局域网中添加了一台新的、独立的计算机一样，<strong>虚拟机会占用局域网中的一个IP地址</strong>，并且可以和其他终端进行相互访问。</p>
+<h3 id="NAT模式"><a href="#NAT模式" class="headerlink" title="NAT模式"></a>NAT模式</h3><p>使用NAT模式网络连接时，VMware会在主机上建立<strong>单独的专用网络</strong>，用以在主机和虚拟机之间相互通信。虚拟机向外部网络发送的请求数据”包裹”，都会交由NAT网络适配器加上”特殊标记”并以主机的名义转发出去，外部网络返回的响应数据”包裹”，也是先由主机接收，然后交由NAT网络适配器根据”特殊标记”进行识别并转发给对应的虚拟机，因此，虚拟机在外部网络中不必具有自己的IP地址。从外部网络来看，虚拟机和主机在<strong>共享一个IP地址</strong>，默认情况下，<strong>外部网络终端也无法访问到虚拟机</strong>。</p>
+<p>此外，在一台主机上只允许有一个NAT模式的虚拟网络。因此，同一台主机上的多个采用NAT模式网络连接的虚拟机也是可以相互访问的。</p>
+<p>前面我们已经提到，默认情况下，外部网络无法访问到虚拟机，不过我们也可以通过手动修改NAT设置实现端口转发功能，将外部网络发送到主机指定端口的数据转发到指定的虚拟机上。比如，我们在虚拟机的80端口上”建立”了一个站点，只要我们设置端口转发，将主机88端口上的数据转发给虚拟机的80端口，就可以让外部网络通过主机的88端口访问到虚拟机80端口上的站点。</p>
+<h3 id="仅主机模式"><a href="#仅主机模式" class="headerlink" title="仅主机模式"></a>仅主机模式</h3><p>仅主机模式，虚拟网络是一个<strong>全封闭的网络</strong>，它唯一能够访问的就是主机。相对于NAT模式而言，仅主机模式不具备NAT功能，所以<strong>虚拟网络不能连接到Internet</strong>(在主机上安装合适的路由或代理软件，或者在Windows系统的主机上使用Internet连接共享功能，仍然可以让虚拟机连接到Internet或其他网络)。</p>
+]]></content>
+      <tags>
+        <tag>虚拟机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Win10查看屏保的存储位置</title>
+    <url>/article/Win10%E6%9F%A5%E7%9C%8B%E5%B1%8F%E4%BF%9D%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE.html</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>当我们每次看到开机美丽漂亮的屏保时，忍不住想要收藏起来。Win10屏保每天都会下载，今天我就教大家查看保存Win10屏保图片。</p>
+</blockquote>
+<a id="more"></a>
+
+
+<h3 id="本机自带的存储位置"><a href="#本机自带的存储位置" class="headerlink" title="本机自带的存储位置"></a>本机自带的存储位置</h3><p>在C:\Windows\Web目录下</p>
+<h3 id="Win10每天下载"><a href="#Win10每天下载" class="headerlink" title="Win10每天下载"></a>Win10每天下载</h3><ol>
+<li><p>第一步，定位屏保所在位置<br>按<code>win+R</code>打开“运行”对话框，输入下面命令：<br><code>C:\Users\%username%\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets\</code><br>现在定位到屏保存储的位置了，但里面的文件不是图片格式，我们还需要转换格式</p>
+</li>
+<li><p>第二步，把临时文件修改成图片格式<br>按<code>win+R</code>打开“运行”对话框 输入cmd命令进入<br>再执行下面命令：<br><code>Ren C:\Users\%username%\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets\*.* *.PNG</code><br>这个时候，你会发现屏保文件都变成了png图片格式的了，可以美美的进行收藏了。</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>电脑技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows中搜索目录下所有文件包含某个字符串</title>
+    <url>/article/Windows%E4%B8%AD%E6%90%9C%E7%B4%A2%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%9F%90%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2.html</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>在windows环境下，我要在某个文件夹内搜索包含某个字符串的文件，那么可以用<code>findstr /s /i &quot;string&quot; *.*</code></p>
+</blockquote>
+<a id="more"></a>
+<p>在windows环境下，在某个文件夹搜索包含某个字符串的文件。<br><code>findstr /s /i &quot;string&quot; *.*</code><br><code>*.*</code>表示所有类型的文件。<br><code>/s</code> 表示当前目录以及所有子目录<br><code>/i</code> 表示不区分大小写</p>
+]]></content>
+      <tags>
+        <tag>电脑技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo的next主题美化</title>
+    <url>/hexo/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96.html</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>之前我介绍了hexo的搭建，这次来看看hexo的NexT主题的一些常用的优化。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="开启版权"><a href="#开启版权" class="headerlink" title="开启版权"></a>开启版权</h3><p>配置文件<code>_config.yml</code>中将<code>post_copyright</code>下的<code>enable</code>设为<code>true</code>，即可开启版权声明</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">post_copyright:</span><br><span class="line">  enable: true</span><br><span class="line">  license: CC BY-NC-SA 3.0</span><br><span class="line">  license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/</span><br></pre></td></tr></table></figure>
+
+<p>注意：最新版本好像不支持了</p>
+<h3 id="修改文章标签样式"><a href="#修改文章标签样式" class="headerlink" title="修改文章标签样式"></a>修改文章标签样式</h3><p>标签样式默认为#tag，我们可以将其改成带图标的<br>在<code>\themes\next\layout\_macro\post.swig</code>，搜索 <code>rel=&quot;tag&quot;&gt;#</code>，将 <code>#</code> 换成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code></p>
+<h3 id="首页文章显示标签"><a href="#首页文章显示标签" class="headerlink" title="首页文章显示标签"></a>首页文章显示标签</h3><p>在 <code>\themes\next\layout\_macro\post.swig</code> 搜索 <code>post.tags and post.tags.length</code>找到代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&#123;% if post.tags and post.tags.length and not is_index %&#125;</span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"post-tags"</span>&gt;</span></span><br><span class="line">      &#123;% for tag in post.tags %&#125;</span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for(tag.path) &#125;&#125;"</span> <span class="attr">rel</span>=<span class="string">"tag"</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-tag"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span> &#123;&#123; tag.name &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      &#123;% endfor %&#125;</span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>把<code>and not is_index</code>去掉<br>修改后：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&#123;% if post.tags and post.tags.length %&#125;</span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"post-tags"</span>&gt;</span></span><br><span class="line">      &#123;% for tag in post.tags %&#125;</span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for(tag.path) &#125;&#125;"</span> <span class="attr">rel</span>=<span class="string">"tag"</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-tag"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span> &#123;&#123; tag.name &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      &#123;% endfor %&#125;</span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="博客网站图标"><a href="#博客网站图标" class="headerlink" title="博客网站图标"></a>博客网站图标</h3><p>我们博客的默认图标是H，不过我们可以修改图标。<br>制作两张图片，一张16x16，一张32x32，放到\source\images中。然后看下面代码，对应设置small与medium就行了。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: /images/favicon-16x16.png</span><br><span class="line">  medium: /images/favicon-32x32.png</span><br><span class="line">  apple_touch_icon: /images/apple-touch-icon-next.png</span><br><span class="line">  safari_pinned_tab: /images/logo.svg</span><br><span class="line">  #android_manifest: /images/manifest.json</span><br><span class="line">  #ms_browserconfig: /images/browserconfig.xml</span><br></pre></td></tr></table></figure>
+
+<h3 id="作者头像设置"><a href="#作者头像设置" class="headerlink" title="作者头像设置"></a>作者头像设置</h3><p>我们设置的头像默认是方形，但可以设置头像为圆形<br>打开<code>\themes\next\source\css\_common\components\sidebar\sidebar-author.styl</code>文件<br>在site-author-image样式中加上<code>border-radius: 100px</code>如下代码：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.site-author-image</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">  <span class="attribute">padding</span>: $site-author-image-padding;</span><br><span class="line">  <span class="attribute">max-width</span>: $site-author-image-width;</span><br><span class="line">  <span class="attribute">height</span>: $site-author-image-height;</span><br><span class="line">  <span class="attribute">border</span>: $site-author-image-border-width solid $site-author-image-border-color;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>好像新版本可以直接在配置文件中设置，我找了半天没有，就直接改样式了。现在贴出新版的代码出来。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">avatar:</span><br><span class="line">  url: /images/author.jpg  #头像图片</span><br><span class="line">  rounded: true #鼠标放在头像上时是否旋转</span><br><span class="line">  opacity: 1 #头像放缩指数</span><br><span class="line">  rotated: true #头像是否设为圆形，默认为矩形</span><br></pre></td></tr></table></figure>
+
+<h3 id="开启首页文章显示摘要"><a href="#开启首页文章显示摘要" class="headerlink" title="开启首页文章显示摘要"></a>开启首页文章显示摘要</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#选取博客正文&lt;!--more--&gt;前的内容</span><br><span class="line">scroll_to_more: true </span><br><span class="line"></span><br><span class="line"># Automatically saving scroll position on each post/page in cookies.</span><br><span class="line">save_scroll: false</span><br><span class="line"></span><br><span class="line">#自动截取摘要</span><br><span class="line">excerpt_description: true </span><br><span class="line"></span><br><span class="line">#自动截取一定程度的摘要</span><br><span class="line">auto_excerpt:</span><br><span class="line">  enable: true </span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加「分类」页面"><a href="#添加「分类」页面" class="headerlink" title="添加「分类」页面"></a>添加「分类」页面</h3><p>创建页面：<code>$ hexo new page categories</code><br>编辑刚新建的页面，将页面的 type 设置为 categories ，主题将自动为这个页面显示分类。页面内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: 分类</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：如果有集成评论服务，页面也会带有评论。 若需要关闭的话，请添加字段 comments 并将值设置为 false。<br>如果页面标题出现乱码，把文件另存为utf-8格式</p>
+</blockquote>
+<h3 id="添加「标签」页面"><a href="#添加「标签」页面" class="headerlink" title="添加「标签」页面"></a>添加「标签」页面</h3><p>创建页面：<code>$ hexo new page tags</code><br>编辑刚新建的页面，将页面的 type 设置为 tags ，主题将自动为这个页面显示分类。页面内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: 标签</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：如果有集成评论服务，页面也会带有评论。 若需要关闭的话，请添加字段 comments 并将值设置为 false。<br>如果页面标题出现乱码，把文件另存为utf-8格式</p>
+</blockquote>
+<h3 id="开启统计功能"><a href="#开启统计功能" class="headerlink" title="开启统计功能"></a>开启统计功能</h3><p>编辑 <code>主题配置文件</code> 中的<code>busuanzi_count</code>的配置项。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">  # 是否开启</span><br><span class="line">  enable: true</span><br><span class="line">  # 站点访问人数统计</span><br><span class="line">  site_uv: true</span><br><span class="line">  site_uv_header: 本站访客数</span><br><span class="line">  site_uv_footer: 人次</span><br><span class="line">  # 站点访问量统计</span><br><span class="line">  site_pv: true</span><br><span class="line">  site_pv_header: 本站总访问量</span><br><span class="line">  site_pv_footer: 次</span><br><span class="line">  # 站点文章阅读量统计</span><br><span class="line">  page_pv: true</span><br><span class="line">  page_pv_header: 本文总阅读量</span><br><span class="line">  page_pv_footer: 次</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：由于不蒜子域名更换了，所以安装官网的这种配置是没有效果的。</p>
+</blockquote>
+<p>解决方案：<br>打开themes\next\layout_third-party\analytics\busuanzi-counter.swig<br>找到如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script async src=&quot;https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>修改为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script async src=&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="文章后添加结束标语"><a href="#文章后添加结束标语" class="headerlink" title="文章后添加结束标语"></a>文章后添加结束标语</h3><p>1.在<code>themes\next\layout\_macro</code>中创建<code>post-end-tag.swig</code>文件，并在其中添加代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    &#123;% if not is_index %&#125;</span><br><span class="line">        &lt;div style=&quot;text-align:center;color: #ccc;font-size:22px;&quot;&gt;-------------本文结束&lt;i class=&quot;fa fa-paw&quot;&gt;&lt;/i&gt;感谢您的阅读-------------&lt;/div&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2.修改<code>themes\next\layout\_macro\post.swig</code>文件，在POST BODY块最后结束标签前添加内容，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &#123;% if not is_index %&#125;</span><br><span class="line">    &#123;% include &apos;post-end-tag.swig&apos; %&#125;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>3.打开 <code>主题配置文件</code> ，添加代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 文章末尾添加“本文结束”标记</span><br><span class="line">passage_end_tag:</span><br><span class="line">  enabled: true</span><br></pre></td></tr></table></figure>
+
+<h3 id="开启评论功能"><a href="#开启评论功能" class="headerlink" title="开启评论功能"></a>开启评论功能</h3><p>我使用的是valine评论系统，由于valine评论系统是基于leancloud开发的，所以我们还需要注册leancloud来支持</p>
+<ol>
+<li><p>获取LeanCloud的APP ID和APP Key<br>登录或注册 LeanCloud, 进入控制台后点击左下角创建应用：<br><img src="https://i.loli.net/2019/06/21/5d0c995c86fac81746.jpg" alt="评论" title="评论"><br>应用创建好以后，进入刚刚创建的应用，选择左下角的设置&gt;应用Key，然后就能看到你的APP ID和APP Key了：<br><img src="https://i.loli.net/2019/06/21/5d0c997a60baa24436.jpg" alt="appid" title="appid"></p>
+</li>
+<li><p>配置valine<br>编辑 <code>主题配置文件</code>,搜索valine，修改相关配置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">valine:</span><br><span class="line">  enable: true</span><br><span class="line">  appid:  APP ID # LeanCloud的APP ID</span><br><span class="line">  appkey:  APP Key # LeanCloud的APP Key</span><br><span class="line">  notify: false # 邮件提醒 , https://github.com/xCss/Valine/wiki</span><br><span class="line">  verify: false # 是否开启验证码</span><br><span class="line">  placeholder: 期待你的高见 # 评论提示</span><br><span class="line">  avatar: mm # 头像</span><br><span class="line">  guest_info: nick,mail,link # custom comment header</span><br><span class="line">  pageSize: 10 # pagination size</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="开启本地搜索功能"><a href="#开启本地搜索功能" class="headerlink" title="开启本地搜索功能"></a>开启本地搜索功能</h3><p>1.安装 hexo-generator-searchdb，在站点的根目录下执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<p>2.编辑 <code>站点配置文件</code>，新增以下内容到任意位置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
+
+<p>3.编辑 <code>主题配置文件</code>，启用本地搜索功能：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IntelliJ IDEA 汉化</title>
+    <url>/idea/IntelliJIDEA%E6%B1%89%E5%8C%96.html</url>
+    <content><![CDATA[<p>IntelliJ IDEA是Java的专业开发人员使用最多的开发工具之一，今天我就来教大家汉化成简体中文。</p>
+<ol>
+<li>打开链接：<a href="https://github.com/pingfangx/jetbrains-in-chinese" target="_blank" rel="noopener">https://github.com/pingfangx/jetbrains-in-chinese</a></li>
+<li>下载,点击右边按钮”cloen or download”-“download ZIP”</li>
+<li>在下载的文件中找到 IntelliJIDEA 目录点击进去</li>
+<li>找到你IntelliJIDEA对应的版本jar包 resources_zh_CN_IntelliJIDEA_&lt;版本&gt;.jar</li>
+<li>关闭IntelliJIDEA软件</li>
+<li>复制jar包到IntelliJ IDEA的安装目录下的lib子目录下</li>
+<li>打开IntelliJIDEA你就会发现都是中文了</li>
+</ol>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java SPI 与 ServiceLoader</title>
+    <url>/java/javaSPI%E4%B8%8EServiceLoader.html</url>
+    <content><![CDATA[<h3 id="java-SPI机制"><a href="#java-SPI机制" class="headerlink" title="java SPI机制"></a>java SPI机制</h3><p>SPI的全名为Service Provider Interface。简单来说就是通过配置文件指定接口的实现类。在java.util.ServiceLoader的文档里有比较详细的介绍。<br>我们系统里抽象的各个模块，往往有很多不同的实现方案。那么我们来看看下面这个例子你就能明白了。</p>
+<h3 id="例子代码"><a href="#例子代码" class="headerlink" title="例子代码"></a>例子代码</h3><p>比如一个电视机厂商，要生产3中不同规格的电视机，小型电视机、中型电视机、大型电视机。<br>那么我们可以设计：电视机模型接口、3种不同电视机的实现类<br>模型接口：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shan.test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;</span></span><br><span class="line"><span class="comment"> * TODO 电视机模型接口</span></span><br><span class="line"><span class="comment"> * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> adan</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0, 2019年11月20日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">TelevisionService</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * &lt;pre&gt;</span></span><br><span class="line"><span class="comment">	 * 生产</span></span><br><span class="line"><span class="comment">	 * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>电视机实现：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shan.test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;</span></span><br><span class="line"><span class="comment"> * TODO 小型电视机</span></span><br><span class="line"><span class="comment"> * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> adan</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0, 2019年11月20日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SmallTelevisionServiceImp</span> <span class="keyword">implements</span> <span class="title">TelevisionService</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"生产小型电视机"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;</span></span><br><span class="line"><span class="comment"> * TODO 中型电视机</span></span><br><span class="line"><span class="comment"> * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> adan</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0, 2019年11月20日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MidsizeTelevisionServiceImp</span> <span class="keyword">implements</span> <span class="title">TelevisionService</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"生产中型电视机"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;</span></span><br><span class="line"><span class="comment"> * TODO 大型电视机</span></span><br><span class="line"><span class="comment"> * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> adan</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0, 2019年11月20日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LargeTelevisionServiceImpl</span> <span class="keyword">implements</span> <span class="title">TelevisionService</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"生产大型电视机"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面已经定义好了，下面我们来实现生产3种不同电视机。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shan.test;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.ServiceLoader;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Hello world!</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">( String[] args )</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    	App app=<span class="keyword">new</span> App();</span><br><span class="line">    	app.production2();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//生产</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	TelevisionService small=<span class="keyword">new</span> SmallTelevisionServiceImp();</span><br><span class="line">    	small.production();</span><br><span class="line">    	TelevisionService midsize=<span class="keyword">new</span> MidsizeTelevisionServiceImp();</span><br><span class="line">    	midsize.production();</span><br><span class="line">    	TelevisionService large=<span class="keyword">new</span> LargeTelevisionServiceImpl();</span><br><span class="line">    	large.production();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>打印如下：<br>生产小型电视机<br>生产中型电视机<br>生产大型电视机</p>
+</blockquote>
+<p>这个时候，这个电视机厂商扩展业务了，要提供了代加工电视机业务，帮别人生产电视机。<br>我们要约定生产电视机的标准了，让其他厂商比较方便接入。这就是SPI<br>规定：</p>
+<ol>
+<li>创建接口实现</li>
+<li>在resources资源目录下创建META-INF/services文件夹</li>
+<li>在services文件夹中创建，以接口类全名命名的文件</li>
+<li>在文件中加入接口实现类全名</li>
+</ol>
+<p>我们改造一下项目<br>第一步，在resources中创建META-INF/services文件夹，并在services中创建com.shan.test.TelevisionService文件<br>第二步：在com.shan.test.TelevisionService文件中写入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">com.shan.test.LargeTelevisionServiceImpl</span><br><span class="line">com.shan.test.MidsizeTelevisionServiceImp</span><br><span class="line">com.shan.test.SmallTelevisionServiceImp</span><br></pre></td></tr></table></figure>
+
+<p>第三步：改造代码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shan.test;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.ServiceLoader;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Hello world!</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">( String[] args )</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    	App app=<span class="keyword">new</span> App();</span><br><span class="line">    	app.production2();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//平常实现方式</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	TelevisionService small=<span class="keyword">new</span> SmallTelevisionServiceImp();</span><br><span class="line">    	small.production();</span><br><span class="line">    	TelevisionService midsize=<span class="keyword">new</span> MidsizeTelevisionServiceImp();</span><br><span class="line">    	midsize.production();</span><br><span class="line">    	TelevisionService large=<span class="keyword">new</span> LargeTelevisionServiceImpl();</span><br><span class="line">    	large.production();</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//通过ServiceLoader来实现</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ServiceLoader&lt;TelevisionService&gt; loadedImpl = ServiceLoader.load(TelevisionService.class);</span><br><span class="line">		Iterator&lt;TelevisionService&gt; it = loadedImpl.iterator();</span><br><span class="line">		<span class="keyword">while</span> (it.hasNext()) &#123;</span><br><span class="line">			TelevisionService service = it.next();</span><br><span class="line">			service.production();</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>运行打印如下：<br>生产小型电视机<br>生产中型电视机<br>生产大型电视机</p>
+</blockquote>
+<p>博主，你貌似描述清楚SPI的意思，但其他厂商怎么接入呢？<br>别急，马上来实现，再次改造项目（这个时候可能需要看源码了）<br>源码地址：<a href="https://github.com/adanblog/sourceCode.git" target="_blank" rel="noopener">https://github.com/adanblog/sourceCode.git</a></p>
+<p>第一步：改造项目，把原来的一个项目拆分成2两个<br>SPITestApi,把电视机模型接口TelevisionService.java移到里面。<br>SPITest项目引用SPITestApi项目。</p>
+<p>第二步：新厂商需要实现我们生产电视机的接口，<br>新建项目SPITest2，引用SPITestApi项目。<br>创建电视机的实现类，现在这个厂商要生产50寸的电视机</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shan.test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;</span></span><br><span class="line"><span class="comment"> * TODO 50寸电视机</span></span><br><span class="line"><span class="comment"> * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> adan</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0, 2019年11月20日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FiftyTelevisionServiceImpl</span> <span class="keyword">implements</span> <span class="title">TelevisionService</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"生产50寸电视机"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在resources中创建META-INF/services文件夹，并创建com.shan.test.TelevisionService文件<br>写入com.shan.test.FiftyTelevisionServiceImpl</p>
+<p>第三步，在SPITest项目中引用SPITest2项目<br>第四步，运行SPITest项目中app类中的main方法你会神奇的发现50寸电视机也生产出来了。</p>
+<blockquote>
+<p>打印如下：<br>生产大型电视机<br>生产中型电视机<br>生产小型电视机<br>生产50寸电视机</p>
+</blockquote>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>SPI被广泛使用在第三方插件式类库的加载，最常见的如JDBC、JNDI、JCE(Java加密模块扩展)等类库。理解ServiceLoader的工作原理有助于编写扩展性良好的可插拔的类库。<br>springBoot启动也是这种思想来实现的。</p>
+<h3 id="源码地址"><a href="#源码地址" class="headerlink" title="源码地址"></a>源码地址</h3><p><a href="https://github.com/adanblog/sourceCode.git" target="_blank" rel="noopener">https://github.com/adanblog/sourceCode.git</a></p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>springBoot java -jar xxx.jar 报 “xxx中没有主清单属性”</title>
+    <url>/springBoot/springBoot%E8%BF%90%E8%A1%8C%E6%8A%A5%E9%94%99xxx%E4%B8%AD%E6%B2%A1%E6%9C%89%E4%B8%BB%E6%B8%85%E5%8D%95%E5%B1%9E.html</url>
+    <content><![CDATA[<h4 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h4><p>我springBoot项目多配置多环境，使用 mvn clean package -Dmaven.test.skip=true -P prod 打包后，使用java -jar xxx.jar运行 报 “xxx中没有主清单属性” 错误。</p>
+<h4 id="问题分析："><a href="#问题分析：" class="headerlink" title="问题分析："></a>问题分析：</h4><p>使用eclipse对项目 右键-&gt; Run As -&gt; Maven Install 打包后，再使用java -jar xxx.jar运行就不会报错。<br>并且使用 mvn clean package -Dmaven.test.skip=true -P prod打包后，没有 xxx.jar.original 这个文件</p>
+<h4 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h4><p>在pom.xml中需要添加以下配置：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>java</category>
+        <category>springBoot</category>
+      </categories>
+      <tags>
+        <tag>springBoot,异常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>分页计算</title>
+    <url>/article/%E5%88%86%E9%A1%B5%E8%AE%A1%E7%AE%97.html</url>
+    <content><![CDATA[<p>pageIndex:第几页-从1开始</p>
+<p>pageSize:每页多少条数</p>
+<p>totalCount:总共多少条数</p>
+<p>totalPage:总页数</p>
+<h2 id="mysql-limit分页"><a href="#mysql-limit分页" class="headerlink" title="mysql limit分页"></a>mysql limit分页</h2><p>语法：Limit x,y。指筛选出结果的第x行后的y行。如果x不填也是可以的，默认为0<br>limit (pageIndex-1)*pageSize,pageSize</p>
+<blockquote>
+<p>select * from test limit 0,10<br>查询从第0行开始后的10条记录</p>
+</blockquote>
+<h2 id="js-对数组分页"><a href="#js-对数组分页" class="headerlink" title="js 对数组分页"></a>js 对数组分页</h2><p>例子：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> pageIndex=<span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> pageSize=<span class="number">3</span>;</span><br><span class="line"><span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>];</span><br><span class="line"><span class="keyword">var</span> totalCount=arr.length;</span><br><span class="line"><span class="keyword">var</span> totalPage=(totalCount + pageSize - <span class="number">1</span>)/pageSize;</span><br><span class="line"><span class="keyword">if</span>(pageIndex&gt;totalPage) &#123;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> start=(pageIndex<span class="number">-1</span>)*pageSize</span><br><span class="line"><span class="keyword">var</span> end=start+pageSize;</span><br><span class="line">end=end&gt;totalCount?totalCount:end;</span><br><span class="line">alert(arr.slice(start,end));</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>输出:<br>4,5,6</p>
+</blockquote>
+<h2 id="java对数组、list分页"><a href="#java对数组、list分页" class="headerlink" title="java对数组、list分页"></a>java对数组、list分页</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[] arr=<span class="keyword">new</span> String[]&#123;<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>,<span class="string">"4"</span>,<span class="string">"5"</span>,<span class="string">"6"</span>,<span class="string">"7"</span>,<span class="string">"8"</span>,<span class="string">"9"</span>,<span class="string">"10"</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> pageIndex=<span class="number">3</span>;</span><br><span class="line"><span class="keyword">int</span> pageSize=<span class="number">3</span>;</span><br><span class="line"><span class="keyword">int</span> totalCount=arr.length;</span><br><span class="line"><span class="keyword">int</span> totalPage=(totalCount + pageSize - <span class="number">1</span>)/pageSize;</span><br><span class="line">System.out.println(<span class="string">"总页数:"</span>+totalPage);</span><br><span class="line"><span class="keyword">if</span>(pageIndex&gt;totalPage) &#123;</span><br><span class="line">	<span class="comment">//java中下标越界会报错</span></span><br><span class="line">	System.out.print(<span class="string">"不能超过总页数"</span>);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> start=(pageIndex-<span class="number">1</span>)*pageSize;</span><br><span class="line"><span class="keyword">int</span> end=start+pageSize-<span class="number">1</span>;</span><br><span class="line">end=end&gt;=totalCount?totalCount-<span class="number">1</span>:end;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=start;i&lt;=end;i++) &#123;</span><br><span class="line">	System.out.print(arr[i]);</span><br><span class="line">	<span class="keyword">if</span>(i&lt;end) &#123;</span><br><span class="line">		System.out.print(<span class="string">","</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>输出:<br>总页数:4<br>7,8,9</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>随记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js使用slice方法获取数组中某段元素</title>
+    <url>/js/js%E8%8E%B7%E5%8F%96%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%90%E6%AE%B5%E5%85%83%E7%B4%A0.html</url>
+    <content><![CDATA[<p>slice() 方法可从已有的数组中返回选定的元素。</p>
+<ul>
+<li><p>语法：arrayObj.slice(start, [end])</p>
+</li>
+<li><p>参数：</p>
+<p>  start：必需。规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。</p>
+<p>  end：可选。规定从何处结束选取。该参数是数组片断结束处的数组下标。如果没有指定该参数，那么切分的数组包含从 start 到数组结束的所有元素。如果这个参数是负数，那么它规定的是从数组尾部开始算起的元素。</p>
+</li>
+<li><p>返回值：返回一个新的Array，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。</p>
+</li>
+</ul>
+<p>列子：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">var</span> newArr=arr.slice(<span class="number">1</span>,<span class="number">3</span>);</span><br><span class="line"><span class="built_in">document</span>.write(arr+ <span class="string">"&lt;br /&gt;"</span>);</span><br><span class="line"><span class="built_in">document</span>.write(newArr);</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span></span><br><span class="line"><span class="number">2</span>,<span class="number">3</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo搭建博客教程</title>
+    <url>/hexo/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B.html</url>
+    <content><![CDATA[<h2 id="安装工作"><a href="#安装工作" class="headerlink" title="安装工作"></a>安装工作</h2><h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><ul>
+<li><p>Windows:下载并安装 <a href="https://nodejs.org/en/" title="点击下载" target="_blank" rel="noopener">点击下载</a><br>官网地址：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></p>
+</li>
+<li><p>Linux安装:</p>
+</li>
+</ul>
+<p>　　cURL:<code>$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | sh</code></p>
+<p>　　Wget:<code>$ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | sh</code></p>
+<p>　　安装完成后，执行命令即可安装 Node.js:<code>$ nvm install node</code></p>
+<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><ul>
+<li>Windows：下载并安装 <a href="https://git-scm.com/download/win" title="git" target="_blank" rel="noopener">git</a>.</li>
+<li>Linux (Ubuntu, Debian)：<code>$　sudo apt-get install git-core</code></li>
+<li>Linux (Fedora, Red Hat, CentOS)：<code>$　sudo yum install git-core</code></li>
+</ul>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。<br><code>$ npm install -g hexo-cli</code></p>
+<h2 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h2><ol>
+<li><p>初始化hexo<br>创建文件夹（myblog），然后cd到该文件夹中，然后执行下面命令：<br><code>$ hexo init</code></p>
+</li>
+<li><p>启动hexo<br>使用gitbash进入myblog文件夹，分别执行以下命令<br><code>$ hexo clean</code><br><code>$ hexo generate</code><br><code>$ hexo server</code><br>打开浏览器输入<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 就能看到自己的博客了</p>
+</li>
+</ol>
+<h2 id="部署到-GitHub-Pages"><a href="#部署到-GitHub-Pages" class="headerlink" title="部署到 GitHub Pages"></a>部署到 GitHub Pages</h2><ol>
+<li><p>在GitHub新建一个repository。如果你希望你的站点能通过 &lt;你的 GitHub 用户名&gt;.github.io 域名访问，你的 repository 应该直接命名为 “&lt;你的 GitHub 用户名&gt;.github.io”。</p>
+</li>
+<li><p>安装 hexo-deployer-git<br><code>$ npm install hexo-deployer-git --save</code></p>
+</li>
+<li><p>更新配置<br>使用编辑器打开_config.yml文件，找到deploy配置并按下方配置（repo配置你的GitHub仓库地址）：<br>deploy:<br>　type:git<br>　repo:<a href="https://github.com/adanblog/adanblog.git" target="_blank" rel="noopener">https://github.com/adanblog/adanblog.git</a><br>　branch:master</p>
+</li>
+<li><p>发布到服务器<br>分布执行下面命令：<br><code>$ hexo clean</code><br><code>$ hexo generate</code><br><code>$ hexo deploy</code></p>
+<blockquote>
+<p>注意：发布的时候需要你输入GitHub密码。如果不想每次都输入密码，可以使用ssh进行验证。<br>本地执行：<code>$ ssh-keygen -t rsa -C &quot;xxxx@qq.com&quot;</code><br>出现id_rsa和id_rsa.pub两个文件。<br>登录Github,找到右上角的图标，打开点进里面的Settings，再选中里面的SSH and GPG KEYS，点击右上角的New SSH key，然后Title里面随便填，再把刚才id_rsa.pub里面的内容复制到Title下面的Key内容框里面，最后点击Add SSH key，这样就完成了SSH Key的加密</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="配置个性化主题"><a href="#配置个性化主题" class="headerlink" title="配置个性化主题"></a>配置个性化主题</h2><ol>
+<li><p>文档版本</p>
+<ul>
+<li>前往 NexT 版本 <a href="https://github.com/iissnan/hexo-theme-next/releases" title="发布页面" target="_blank" rel="noopener">发布页面</a>。</li>
+<li>选择你所需要的版本，下载 Download 区域下的 Source Code (zip) 到本地。</li>
+<li>解压所下载的压缩包至站点的 themes 目录下， 并将 解压后的文件夹名称（hexo-theme-next-0.4.0）更改为 next。 </li>
+<li>打开 站点配置文件（_config.yml）， 找到 theme 字段，并将其值更改为 next<br>theme: next</li>
+</ul>
+</li>
+<li><p>最新版<br>命令：<code>$ git clone https://github.com/iissnan/hexo-theme-next themes/next</code></p>
+</li>
+<li><p>更多配置到 <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">http://theme-next.iissnan.com/getting-started.html</a> 查看</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于此博客</title>
+    <url>/about/about.html</url>
+    <content><![CDATA[<p>我是一名程序员，目前就职广州某能源公司，负责公司技术架构与项目管理。<br>此博客记录我对技术的学习与理解。</p>
+]]></content>
+  </entry>
+</search>
