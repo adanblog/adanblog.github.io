@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>mysql备份</title>
-    <url>/mysql/d5344ff8.html</url>
+    <url>/mysql/b0f371d5.html</url>
     <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>我们线上运行的数据库，数据最重要，要是哪天不小心被删了，那你也就可以打包走人了，所以我们需要mysq数据备份措施。mysql备份有全备与增量备份两种方式</p>
 <a id="more"></a>
 
