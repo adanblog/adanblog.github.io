@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="java,">
+  <meta name="keywords" content="电脑技巧,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="java SPI机制SPI的全名为Service Provider Interface。简单来说就是通过配置文件指定接口的实现类。在java.util.ServiceLoader的文档里有比较详细的介绍。我们系统里抽象的各个模块，往往有很多不同的实现方案。那么我们来看看下面这个例子你就能明白了。 例子代码比如一个电视机厂商，要生产3中不同规格的电视机，小型电视机、中型电视机、大型电视机。那么我们可">
-<meta name="keywords" content="java">
+<meta name="description" content="前言 在windows环境下，我要在某个文件夹内搜索包含某个字符串的文件，那么可以用findstr /s /i &amp;quot;string&amp;quot; *.*">
+<meta name="keywords" content="电脑技巧">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java SPI 与 ServiceLoader">
-<meta property="og:url" content="http://www.adanblog.com/java/javaSPI与ServiceLoader.html">
+<meta property="og:title" content="Windows中搜索目录下所有文件包含某个字符串">
+<meta property="og:url" content="http://www.adanblog.com/article/9d31d1a2.html">
 <meta property="og:site_name" content="阿丹博客">
-<meta property="og:description" content="java SPI机制SPI的全名为Service Provider Interface。简单来说就是通过配置文件指定接口的实现类。在java.util.ServiceLoader的文档里有比较详细的介绍。我们系统里抽象的各个模块，往往有很多不同的实现方案。那么我们来看看下面这个例子你就能明白了。 例子代码比如一个电视机厂商，要生产3中不同规格的电视机，小型电视机、中型电视机、大型电视机。那么我们可">
-<meta property="og:locale" content="java">
-<meta property="og:updated_time" content="2019-12-11T09:37:27.732Z">
+<meta property="og:description" content="前言 在windows环境下，我要在某个文件夹内搜索包含某个字符串的文件，那么可以用findstr /s /i &amp;quot;string&amp;quot; *.*">
+<meta property="og:locale" content="article">
+<meta property="og:updated_time" content="2019-12-30T09:15:18.003Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java SPI 与 ServiceLoader">
-<meta name="twitter:description" content="java SPI机制SPI的全名为Service Provider Interface。简单来说就是通过配置文件指定接口的实现类。在java.util.ServiceLoader的文档里有比较详细的介绍。我们系统里抽象的各个模块，往往有很多不同的实现方案。那么我们来看看下面这个例子你就能明白了。 例子代码比如一个电视机厂商，要生产3中不同规格的电视机，小型电视机、中型电视机、大型电视机。那么我们可">
+<meta name="twitter:title" content="Windows中搜索目录下所有文件包含某个字符串">
+<meta name="twitter:description" content="前言 在windows环境下，我要在某个文件夹内搜索包含某个字符串的文件，那么可以用findstr /s /i &amp;quot;string&amp;quot; *.*">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://www.adanblog.com/java/javaSPI与ServiceLoader.html">
+  <link rel="canonical" href="http://www.adanblog.com/article/9d31d1a2.html">
 
 
 
 
 
-  <title>java SPI 与 ServiceLoader | 阿丹博客</title>
+  <title>Windows中搜索目录下所有文件包含某个字符串 | 阿丹博客</title>
   
 
 
@@ -148,7 +148,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="java">
+<body itemscope itemtype="http://schema.org/WebPage" lang="article">
 
   
   
@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.adanblog.com/java/javaSPI与ServiceLoader.html">
+    <link itemprop="mainEntityOfPage" href="http://www.adanblog.com/article/9d31d1a2.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="阿丹">
@@ -326,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java SPI 与 ServiceLoader</h1>
+          <h1 class="post-title" itemprop="name headline">Windows中搜索目录下所有文件包含某个字符串</h1>
         
 
         <div class="post-meta">
@@ -338,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-20T18:05:55+08:00">
-                2019-11-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-25T15:22:45+08:00">
+                2019-11-25
               </time>
             
 
@@ -349,28 +349,6 @@
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -379,8 +357,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/java/javaSPI与ServiceLoader.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="java/javaSPI与ServiceLoader.html" itemprop="commentCount"></span>
+                <a href="/article/9d31d1a2.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="article/9d31d1a2.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -413,51 +391,11 @@
       
 
       
-        <h3 id="java-SPI机制"><a href="#java-SPI机制" class="headerlink" title="java SPI机制"></a>java SPI机制</h3><p>SPI的全名为Service Provider Interface。简单来说就是通过配置文件指定接口的实现类。在java.util.ServiceLoader的文档里有比较详细的介绍。<br>我们系统里抽象的各个模块，往往有很多不同的实现方案。那么我们来看看下面这个例子你就能明白了。</p>
-<h3 id="例子代码"><a href="#例子代码" class="headerlink" title="例子代码"></a>例子代码</h3><p>比如一个电视机厂商，要生产3中不同规格的电视机，小型电视机、中型电视机、大型电视机。<br>那么我们可以设计：电视机模型接口、3种不同电视机的实现类<br>模型接口：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shan.test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;</span></span><br><span class="line"><span class="comment"> * TODO 电视机模型接口</span></span><br><span class="line"><span class="comment"> * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> adan</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0, 2019年11月20日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">TelevisionService</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * &lt;pre&gt;</span></span><br><span class="line"><span class="comment">	 * 生产</span></span><br><span class="line"><span class="comment">	 * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>电视机实现：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shan.test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;</span></span><br><span class="line"><span class="comment"> * TODO 小型电视机</span></span><br><span class="line"><span class="comment"> * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> adan</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0, 2019年11月20日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SmallTelevisionServiceImp</span> <span class="keyword">implements</span> <span class="title">TelevisionService</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"生产小型电视机"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;</span></span><br><span class="line"><span class="comment"> * TODO 中型电视机</span></span><br><span class="line"><span class="comment"> * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> adan</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0, 2019年11月20日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MidsizeTelevisionServiceImp</span> <span class="keyword">implements</span> <span class="title">TelevisionService</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"生产中型电视机"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;</span></span><br><span class="line"><span class="comment"> * TODO 大型电视机</span></span><br><span class="line"><span class="comment"> * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> adan</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0, 2019年11月20日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LargeTelevisionServiceImpl</span> <span class="keyword">implements</span> <span class="title">TelevisionService</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"生产大型电视机"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上面已经定义好了，下面我们来实现生产3种不同电视机。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shan.test;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.ServiceLoader;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Hello world!</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">( String[] args )</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    	App app=<span class="keyword">new</span> App();</span><br><span class="line">    	app.production2();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//生产</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	TelevisionService small=<span class="keyword">new</span> SmallTelevisionServiceImp();</span><br><span class="line">    	small.production();</span><br><span class="line">    	TelevisionService midsize=<span class="keyword">new</span> MidsizeTelevisionServiceImp();</span><br><span class="line">    	midsize.production();</span><br><span class="line">    	TelevisionService large=<span class="keyword">new</span> LargeTelevisionServiceImpl();</span><br><span class="line">    	large.production();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>打印如下：<br>生产小型电视机<br>生产中型电视机<br>生产大型电视机</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>在windows环境下，我要在某个文件夹内搜索包含某个字符串的文件，那么可以用<code>findstr /s /i &quot;string&quot; *.*</code></p>
 </blockquote>
-<p>这个时候，这个电视机厂商扩展业务了，要提供了代加工电视机业务，帮别人生产电视机。<br>我们要约定生产电视机的标准了，让其他厂商比较方便接入。这就是SPI<br>规定：</p>
-<ol>
-<li>创建接口实现</li>
-<li>在resources资源目录下创建META-INF/services文件夹</li>
-<li>在services文件夹中创建，以接口类全名命名的文件</li>
-<li>在文件中加入接口实现类全名</li>
-</ol>
-<p>我们改造一下项目<br>第一步，在resources中创建META-INF/services文件夹，并在services中创建com.shan.test.TelevisionService文件<br>第二步：在com.shan.test.TelevisionService文件中写入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">com.shan.test.LargeTelevisionServiceImpl</span><br><span class="line">com.shan.test.MidsizeTelevisionServiceImp</span><br><span class="line">com.shan.test.SmallTelevisionServiceImp</span><br></pre></td></tr></table></figure>
-
-<p>第三步：改造代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shan.test;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.ServiceLoader;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Hello world!</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">( String[] args )</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    	App app=<span class="keyword">new</span> App();</span><br><span class="line">    	app.production2();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//平常实现方式</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	TelevisionService small=<span class="keyword">new</span> SmallTelevisionServiceImp();</span><br><span class="line">    	small.production();</span><br><span class="line">    	TelevisionService midsize=<span class="keyword">new</span> MidsizeTelevisionServiceImp();</span><br><span class="line">    	midsize.production();</span><br><span class="line">    	TelevisionService large=<span class="keyword">new</span> LargeTelevisionServiceImpl();</span><br><span class="line">    	large.production();</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//通过ServiceLoader来实现</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ServiceLoader&lt;TelevisionService&gt; loadedImpl = ServiceLoader.load(TelevisionService.class);</span><br><span class="line">		Iterator&lt;TelevisionService&gt; it = loadedImpl.iterator();</span><br><span class="line">		<span class="keyword">while</span> (it.hasNext()) &#123;</span><br><span class="line">			TelevisionService service = it.next();</span><br><span class="line">			service.production();</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>运行打印如下：<br>生产小型电视机<br>生产中型电视机<br>生产大型电视机</p>
-</blockquote>
-<p>博主，你貌似描述清楚SPI的意思，但其他厂商怎么接入呢？<br>别急，马上来实现，再次改造项目（这个时候可能需要看源码了）<br>源码地址：<a href="https://github.com/adanblog/sourceCode.git" target="_blank" rel="noopener">https://github.com/adanblog/sourceCode.git</a></p>
-<p>第一步：改造项目，把原来的一个项目拆分成2两个<br>SPITestApi,把电视机模型接口TelevisionService.java移到里面。<br>SPITest项目引用SPITestApi项目。</p>
-<p>第二步：新厂商需要实现我们生产电视机的接口，<br>新建项目SPITest2，引用SPITestApi项目。<br>创建电视机的实现类，现在这个厂商要生产50寸的电视机</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shan.test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;</span></span><br><span class="line"><span class="comment"> * TODO 50寸电视机</span></span><br><span class="line"><span class="comment"> * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> adan</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0, 2019年11月20日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FiftyTelevisionServiceImpl</span> <span class="keyword">implements</span> <span class="title">TelevisionService</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"生产50寸电视机"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在resources中创建META-INF/services文件夹，并创建com.shan.test.TelevisionService文件<br>写入com.shan.test.FiftyTelevisionServiceImpl</p>
-<p>第三步，在SPITest项目中引用SPITest2项目<br>第四步，运行SPITest项目中app类中的main方法你会神奇的发现50寸电视机也生产出来了。</p>
-<blockquote>
-<p>打印如下：<br>生产大型电视机<br>生产中型电视机<br>生产小型电视机<br>生产50寸电视机</p>
-</blockquote>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>SPI被广泛使用在第三方插件式类库的加载，最常见的如JDBC、JNDI、JCE(Java加密模块扩展)等类库。理解ServiceLoader的工作原理有助于编写扩展性良好的可插拔的类库。<br>springBoot启动也是这种思想来实现的。</p>
-<h3 id="源码地址"><a href="#源码地址" class="headerlink" title="源码地址"></a>源码地址</h3><p><a href="https://github.com/adanblog/sourceCode.git" target="_blank" rel="noopener">https://github.com/adanblog/sourceCode.git</a></p>
+<a id="more"></a>
+<p>在windows环境下，在某个文件夹搜索包含某个字符串的文件。<br><code>findstr /s /i &quot;string&quot; *.*</code><br><code>*.*</code>表示所有类型的文件。<br><code>/s</code> 表示当前目录以及所有子目录<br><code>/i</code> 表示不区分大小写</p>
 
       
       
@@ -488,7 +426,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.adanblog.com/java/javaSPI与ServiceLoader.html" title="java SPI 与 ServiceLoader">http://www.adanblog.com/java/javaSPI与ServiceLoader.html</a>
+    <a href="http://www.adanblog.com/article/9d31d1a2.html" title="Windows中搜索目录下所有文件包含某个字符串">http://www.adanblog.com/article/9d31d1a2.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -503,7 +441,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+            <a href="/tags/电脑技巧/" rel="tag"><i class="fa fa-tag"></i> 电脑技巧</a>
           
         </div>
       
@@ -516,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/springBoot/springBoot运行报错xxx中没有主清单属.html" rel="next" title="springBoot java -jar xxx.jar 报 “xxx中没有主清单属性”">
-                <i class="fa fa-chevron-left"></i> springBoot java -jar xxx.jar 报 “xxx中没有主清单属性”
+              <a href="/hexo/fbf5310d.html" rel="next" title="hexo的next主题美化">
+                <i class="fa fa-chevron-left"></i> hexo的next主题美化
               </a>
             
           </div>
@@ -526,8 +464,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/idea/IntelliJIDEA汉化.html" rel="prev" title="IntelliJ IDEA 汉化">
-                IntelliJ IDEA 汉化 <i class="fa fa-chevron-right"></i>
+              <a href="/article/9b3abaf4.html" rel="prev" title="Win10查看屏保的存储位置">
+                Win10查看屏保的存储位置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -617,7 +555,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -628,7 +566,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -682,7 +620,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#java-SPI机制"><span class="nav-number">1.</span> <span class="nav-text">java SPI机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子代码"><span class="nav-number">2.</span> <span class="nav-text">例子代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">3.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码地址"><span class="nav-number">4.</span> <span class="nav-text">源码地址</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li></ol></div>
             
 
           </div>
@@ -862,9 +800,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.adanblog.com/java/javaSPI与ServiceLoader.html';
-          this.page.identifier = 'java/javaSPI与ServiceLoader.html';
-          this.page.title = 'java SPI 与 ServiceLoader';
+          this.page.url = 'http://www.adanblog.com/article/9d31d1a2.html';
+          this.page.identifier = 'article/9d31d1a2.html';
+          this.page.title = 'Windows中搜索目录下所有文件包含某个字符串';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';

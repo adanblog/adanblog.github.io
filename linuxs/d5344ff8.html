@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="随记,">
+  <meta name="keywords" content="linux,mysql,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="pageIndex:第几页-从1开始 pageSize:每页多少条数 totalCount:总共多少条数 totalPage:总页数 mysql limit分页语法：Limit x,y。指筛选出结果的第x行后的y行。如果x不填也是可以的，默认为0limit (pageIndex-1)*pageSize,pageSize  select * from test limit 0,10查询从第0行开始后">
-<meta name="keywords" content="随记">
+<meta name="description" content="前言 今天我来给大家介绍在linux环境中如果安装mysql,我的操作系统是centos7.5,所有下面我所有操作步骤都在centos7.5环境下完成的。">
+<meta name="keywords" content="linux,mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="分页计算">
-<meta property="og:url" content="http://www.adanblog.com/article/分页计算.html">
+<meta property="og:title" content="centos7安装mysql">
+<meta property="og:url" content="http://www.adanblog.com/linuxs/d5344ff8.html">
 <meta property="og:site_name" content="阿丹博客">
-<meta property="og:description" content="pageIndex:第几页-从1开始 pageSize:每页多少条数 totalCount:总共多少条数 totalPage:总页数 mysql limit分页语法：Limit x,y。指筛选出结果的第x行后的y行。如果x不填也是可以的，默认为0limit (pageIndex-1)*pageSize,pageSize  select * from test limit 0,10查询从第0行开始后">
-<meta property="og:locale" content="article">
-<meta property="og:updated_time" content="2019-12-11T09:37:27.729Z">
+<meta property="og:description" content="前言 今天我来给大家介绍在linux环境中如果安装mysql,我的操作系统是centos7.5,所有下面我所有操作步骤都在centos7.5环境下完成的。">
+<meta property="og:locale" content="linuxs">
+<meta property="og:updated_time" content="2019-12-23T02:19:52.077Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分页计算">
-<meta name="twitter:description" content="pageIndex:第几页-从1开始 pageSize:每页多少条数 totalCount:总共多少条数 totalPage:总页数 mysql limit分页语法：Limit x,y。指筛选出结果的第x行后的y行。如果x不填也是可以的，默认为0limit (pageIndex-1)*pageSize,pageSize  select * from test limit 0,10查询从第0行开始后">
+<meta name="twitter:title" content="centos7安装mysql">
+<meta name="twitter:description" content="前言 今天我来给大家介绍在linux环境中如果安装mysql,我的操作系统是centos7.5,所有下面我所有操作步骤都在centos7.5环境下完成的。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://www.adanblog.com/article/分页计算.html">
+  <link rel="canonical" href="http://www.adanblog.com/linuxs/d5344ff8.html">
 
 
 
 
 
-  <title>分页计算 | 阿丹博客</title>
+  <title>centos7安装mysql | 阿丹博客</title>
   
 
 
@@ -148,7 +148,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="article">
+<body itemscope itemtype="http://schema.org/WebPage" lang="linuxs">
 
   
   
@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.adanblog.com/article/分页计算.html">
+    <link itemprop="mainEntityOfPage" href="http://www.adanblog.com/linuxs/d5344ff8.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="阿丹">
@@ -326,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">分页计算</h1>
+          <h1 class="post-title" itemprop="name headline">centos7安装mysql</h1>
         
 
         <div class="post-meta">
@@ -338,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-08T17:44:34+08:00">
-                2019-11-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-11T19:25:06+08:00">
+                2019-12-11
               </time>
             
 
@@ -349,6 +349,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -357,8 +379,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/article/分页计算.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="article/分页计算.html" itemprop="commentCount"></span>
+                <a href="/linuxs/d5344ff8.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="linuxs/d5344ff8.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -391,25 +413,132 @@
       
 
       
-        <p>pageIndex:第几页-从1开始</p>
-<p>pageSize:每页多少条数</p>
-<p>totalCount:总共多少条数</p>
-<p>totalPage:总页数</p>
-<h2 id="mysql-limit分页"><a href="#mysql-limit分页" class="headerlink" title="mysql limit分页"></a>mysql limit分页</h2><p>语法：Limit x,y。指筛选出结果的第x行后的y行。如果x不填也是可以的，默认为0<br>limit (pageIndex-1)*pageSize,pageSize</p>
-<blockquote>
-<p>select * from test limit 0,10<br>查询从第0行开始后的10条记录</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>今天我来给大家介绍在linux环境中如果安装mysql,我的操作系统是centos7.5,所有下面我所有操作步骤都在centos7.5环境下完成的。</p>
 </blockquote>
-<h2 id="js-对数组分页"><a href="#js-对数组分页" class="headerlink" title="js 对数组分页"></a>js 对数组分页</h2><p>例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pageIndex=<span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> pageSize=<span class="number">3</span>;</span><br><span class="line"><span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>];</span><br><span class="line"><span class="keyword">var</span> totalCount=arr.length;</span><br><span class="line"><span class="keyword">var</span> totalPage=(totalCount + pageSize - <span class="number">1</span>)/pageSize;</span><br><span class="line"><span class="keyword">if</span>(pageIndex&gt;totalPage) &#123;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> start=(pageIndex<span class="number">-1</span>)*pageSize</span><br><span class="line"><span class="keyword">var</span> end=start+pageSize;</span><br><span class="line">end=end&gt;totalCount?totalCount:end;</span><br><span class="line">alert(arr.slice(start,end));</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<p><strong>检查系统是否安装mysql</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># rpm -qa | grep mysql</span><br></pre></td></tr></table></figure>
+
+<p> 如果返回空值，说明没有安装<br> 从最新版本的linux系统开始，默认的是 Mariadb而不是mysql！</p>
+<p><strong>查看是否有wget命令</strong><br>在命令行中输入:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># wget</span><br></pre></td></tr></table></figure>
+
+<p>如果出现 <code>未找到命令</code>,再执行下面命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum -y install wget</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装MySQL的-Yum-Repository"><a href="#安装MySQL的-Yum-Repository" class="headerlink" title="安装MySQL的 Yum Repository"></a>安装MySQL的 Yum Repository</h3><p><strong>在mysql官方找rmp文件</strong></p>
+<p>到这里找到对应系统的版本，<a href="https://dev.mysql.com/downloads/repo/yum/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/repo/yum/</a><br>点击<code>Download</code>，到了下载页面有两个大的按钮，在两个按钮下找到<br><code>No thanks, just start my download.</code>右键复制链接地址。<br>黏贴后就是<a href="https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm" target="_blank" rel="noopener">https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</a></p>
+<p><strong>下载rpm文件并安装</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># wget https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># rpm -Uvh mysql80-community-release-el7-1.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<p>接下来就可以正式安装mysql了,但是呢?如果直接安装默认的是8.0版本的,我在这里演需要安装5.7版本.如果需要的就是8.0版本可以跳过下一步</p>
+<p><strong>修改安装默认为mysql5.7版本</strong><br>修改配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># vi /etc/yum.repos.d/mysql-community.repo</span><br></pre></td></tr></table></figure>
+
+<p>这里我用的是mysql5.7的所以把5.7的enabled=1,把8.0的enabled=0 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># Enable to use MySQL 5.7</span><br><span class="line">[mysql57-community]</span><br><span class="line">name=MySQL 5.7 Community Server</span><br><span class="line">baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/7/$basearch/</span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql</span><br><span class="line"></span><br><span class="line">[mysql80-community]</span><br><span class="line">name=MySQL 8.0 Community Server</span><br><span class="line">baseurl=http://repo.mysql.com/yum/mysql-8.0-community/el/7/$basearch/</span><br><span class="line">enabled=0</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql</span><br></pre></td></tr></table></figure>
+
+<p>修改好保存退出</p>
+<p><strong>安装mysql</strong><br>执行:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install mysql mysql-server mysql-devel</span><br></pre></td></tr></table></figure>
+
+<p>这步可能会花些时间，安装完成后就会覆盖掉之前的mariadb</p>
+<h3 id="MySQL数据库设置"><a href="#MySQL数据库设置" class="headerlink" title="MySQL数据库设置"></a>MySQL数据库设置</h3><p><strong>首先启动MySQL</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># systemctl start  mysqld.service</span><br></pre></td></tr></table></figure>
+
+<p><strong>查看MySQL运行状态：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># systemctl status mysqld.service</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysqld.service - MySQL Server</span><br><span class="line">   Loaded: loaded (/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled)</span><br><span class="line">   Active: active (running) since Wed 2019-12-11 09:31:06 CST; 10s ago</span><br><span class="line">     Docs: man:mysqld(8)</span><br><span class="line">           http://dev.mysql.com/doc/refman/en/using-systemd.html</span><br><span class="line">  Process: 2712 ExecStart=/usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid $MYSQLD_OPTS (code=exited, status=0/SUCCESS)</span><br><span class="line">  Process: 2662 ExecStartPre=/usr/bin/mysqld_pre_systemd (code=exited, status=0/SUCCESS)</span><br><span class="line"> Main PID: 2715 (mysqld)</span><br><span class="line">   CGroup: /system.slice/mysqld.service</span><br><span class="line">           └─2715 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>输出:<br>4,5,6</p>
+<p>补上一个命令<br>重新启动mysql服务：</p>
 </blockquote>
-<h2 id="java对数组、list分页"><a href="#java对数组、list分页" class="headerlink" title="java对数组、list分页"></a>java对数组、list分页</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">String[] arr=<span class="keyword">new</span> String[]&#123;<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>,<span class="string">"4"</span>,<span class="string">"5"</span>,<span class="string">"6"</span>,<span class="string">"7"</span>,<span class="string">"8"</span>,<span class="string">"9"</span>,<span class="string">"10"</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> pageIndex=<span class="number">3</span>;</span><br><span class="line"><span class="keyword">int</span> pageSize=<span class="number">3</span>;</span><br><span class="line"><span class="keyword">int</span> totalCount=arr.length;</span><br><span class="line"><span class="keyword">int</span> totalPage=(totalCount + pageSize - <span class="number">1</span>)/pageSize;</span><br><span class="line">System.out.println(<span class="string">"总页数:"</span>+totalPage);</span><br><span class="line"><span class="keyword">if</span>(pageIndex&gt;totalPage) &#123;</span><br><span class="line">	<span class="comment">//java中下标越界会报错</span></span><br><span class="line">	System.out.print(<span class="string">"不能超过总页数"</span>);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> start=(pageIndex-<span class="number">1</span>)*pageSize;</span><br><span class="line"><span class="keyword">int</span> end=start+pageSize-<span class="number">1</span>;</span><br><span class="line">end=end&gt;=totalCount?totalCount-<span class="number">1</span>:end;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=start;i&lt;=end;i++) &#123;</span><br><span class="line">	System.out.print(arr[i]);</span><br><span class="line">	<span class="keyword">if</span>(i&lt;end) &#123;</span><br><span class="line">		System.out.print(<span class="string">","</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># systemctl restart  mysqld.service</span><br></pre></td></tr></table></figure>
+
+<p><strong>找出mysql的登录密码</strong><br>此时MySQL已经开始正常运行，不过要想进入MySQL还得先找出此时root用户的密码，通过如下命令可以在日志文件中找出密码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># grep &quot;password&quot; /var/log/mysqld.log</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2019-12-11T01:31:02.794484Z 1 [Note] A temporary password is generated for root@localhost: bpi+UkOPe7d/</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>输出:<br>总页数:4<br>7,8,9</p>
+<p>root@localhost: 后面的<code>bpi+UkOPe7d/</code>就是密码了。</p>
 </blockquote>
+<p><strong>进入数据库修改密码</strong><br>如下命令进入数据库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># mysql -uroot -p</span><br></pre></td></tr></table></figure>
+
+<p>输入初始密码，此时不能做任何事情，因为MySQL默认必须修改密码之后才能操作数据库。<br>修改密码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;123456&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>这里有个问题，新密码设置的时候如果设置的过于简单会报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR 1819 (HY000): Your password does not satisfy the current policy requirements</span><br></pre></td></tr></table></figure>
+
+<p>原因是因为MySQL有密码设置的规范，具体是与validate_password_policy的值有关,<br>修改密码规则(需要先给默认账户改好密码后执行才生效)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; set global validate_password_policy=0;</span><br><span class="line">mysql&gt; set global validate_password_length=1;</span><br></pre></td></tr></table></figure>
+
+<p>此时密码就可以设置的很简单，例如1234之类的。到此数据库的密码设置就完成了。<br>退出mysql:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;exit;</span><br></pre></td></tr></table></figure>
+
+<p>再登录试试修改密码是否成功：登录Mysql：<code>输入mysql -u帐号 -p密码</code> 这是登陆</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># mysql -uroot -p123456</span><br></pre></td></tr></table></figure>
+
+<p>但此时还有一个问题，就是因为安装了Yum Repository，以后每次yum操作都会自动更新，需要把这个卸载掉：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum -y mysql80-community-release.noarch</span><br></pre></td></tr></table></figure>
+
+<p>此时才算真的完成了。</p>
+<h3 id="检查mysql端口是否开启"><a href="#检查mysql端口是否开启" class="headerlink" title="检查mysql端口是否开启"></a>检查mysql端口是否开启</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># firewall-cmd --query-port=3306/tcp</span><br></pre></td></tr></table></figure>
+
+<p>查看3306端口是否开启，yes表示开启，no表示未开启。还有一种情况，防火墙没有打开如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FirewallD is not running</span><br></pre></td></tr></table></figure>
+
+<p>看需要双方开启防火墙<br>启动防火墙：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># systemctl start firewalld</span><br></pre></td></tr></table></figure>
+
+<p>开机启用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># systemctl enable firewalld</span><br></pre></td></tr></table></figure>
+
+<p>永久开启3306端口：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># firewall-cmd --zone=public --add-port=3306/tcp --permanent</span><br></pre></td></tr></table></figure>
+
+<p>重新载入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<h3 id="mysql权限与远程连接"><a href="#mysql权限与远程连接" class="headerlink" title="mysql权限与远程连接"></a>mysql权限与远程连接</h3><p><strong>创建用户</strong><br>以root用户登录到数据库进行用户创建命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;username&apos;@&apos;host&apos; IDENTIFIED BY &apos;password&apos;;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>username——将要创建的用户名；<br> host——指定该用户在哪个主机上可以登录，”localhost”指该用户只能在本地登录，不能在另外一台机器上远程登录，如果想远程登录，将”localhost”改为”%”，表示在任何一台电脑上都可以登录；也可以指定某台机器可以远程登录；<br>password——该用户的登录密码，密码可以为空，若为空则该用户可以不需要密码登录服务器。</p>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;test_admin&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;admin@123_S&apos;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>授权</strong><br>以root用户登录到数据库进行授权</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRANT privileges ON databasename.tablename TO &apos;username&apos;@&apos;host&apos;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>privileges——用户的操作权限，如SELECT等。如果授予所有权限则使用ALL。<br> databasename——数据库名称。tablename——表名。如果要给该用户授予对所有数据库和表的相应操作权限则可用<em>表示，例如</em>.*<br> flush privileges;表示刷新权限</p>
+</blockquote>
+<p> 例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;test_amin&apos;@&apos;%&apos; IDENTIFIED BY &apos;admin@123_S&apos; WITH GRANT OPTION;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+<p><strong>撤销用户权限</strong><br>命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REVOKE privilege ON databasename.tablename FROM &apos;username&apos;@&apos;host&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REVOKE SELECT ON *.* FROM &apos;test_amin&apos;@&apos;%&apos;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>删除账户及权限</strong><br>命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop user &apos;username&apos;@&apos;host&apos;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>查看用户的授权</strong><br>命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW GRANTS FOR &apos;username&apos;@&apos;host&apos;;</span><br></pre></td></tr></table></figure>
+
 
       
       
@@ -440,7 +569,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.adanblog.com/article/分页计算.html" title="分页计算">http://www.adanblog.com/article/分页计算.html</a>
+    <a href="http://www.adanblog.com/linuxs/d5344ff8.html" title="centos7安装mysql">http://www.adanblog.com/linuxs/d5344ff8.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -455,7 +584,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/随记/" rel="tag"><i class="fa fa-tag"></i> 随记</a>
+            <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+          
+            <a href="/tags/mysql/" rel="tag"><i class="fa fa-tag"></i> mysql</a>
           
         </div>
       
@@ -468,8 +599,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/js/js获取数组中某段元素.html" rel="next" title="js使用slice方法获取数组中某段元素">
-                <i class="fa fa-chevron-left"></i> js使用slice方法获取数组中某段元素
+              <a href="/article/73d152bb.html" rel="next" title="VMware三种网络连接模式">
+                <i class="fa fa-chevron-left"></i> VMware三种网络连接模式
               </a>
             
           </div>
@@ -478,8 +609,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/springBoot/springBoot运行报错xxx中没有主清单属.html" rel="prev" title="springBoot java -jar xxx.jar 报 “xxx中没有主清单属性”">
-                springBoot java -jar xxx.jar 报 “xxx中没有主清单属性” <i class="fa fa-chevron-right"></i>
+              <a href="/linuxs/3cbebd87.html" rel="prev" title="linux中安装nginx">
+                linux中安装nginx <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -634,7 +765,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql-limit分页"><span class="nav-number">1.</span> <span class="nav-text">mysql limit分页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js-对数组分页"><span class="nav-number">2.</span> <span class="nav-text">js 对数组分页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java对数组、list分页"><span class="nav-number">3.</span> <span class="nav-text">java对数组、list分页</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装MySQL的-Yum-Repository"><span class="nav-number">2.</span> <span class="nav-text">安装MySQL的 Yum Repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL数据库设置"><span class="nav-number">3.</span> <span class="nav-text">MySQL数据库设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检查mysql端口是否开启"><span class="nav-number">4.</span> <span class="nav-text">检查mysql端口是否开启</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql权限与远程连接"><span class="nav-number">5.</span> <span class="nav-text">mysql权限与远程连接</span></a></li></ol></div>
             
 
           </div>
@@ -814,9 +945,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.adanblog.com/article/分页计算.html';
-          this.page.identifier = 'article/分页计算.html';
-          this.page.title = '分页计算';
+          this.page.url = 'http://www.adanblog.com/linuxs/d5344ff8.html';
+          this.page.identifier = 'linuxs/d5344ff8.html';
+          this.page.title = 'centos7安装mysql';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';

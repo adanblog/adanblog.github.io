@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="电脑技巧,">
+  <meta name="keywords" content="虚拟机,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="前言 在windows环境下，我要在某个文件夹内搜索包含某个字符串的文件，那么可以用findstr /s /i &amp;quot;string&amp;quot; *.*">
-<meta name="keywords" content="电脑技巧">
+<meta name="description" content="前言 我们使用VMware虚拟软件创建虚拟机的时候，会对网络适配器进行配置，但是它会有三种网络连接方式：桥接方式、NAT模式、仅主机模式。下面我给大家介绍一下三种网络连接的区别。">
+<meta name="keywords" content="虚拟机">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows中搜索目录下所有文件包含某个字符串">
-<meta property="og:url" content="http://www.adanblog.com/article/Windows中搜索目录下所有文件包含某个字符串.html">
+<meta property="og:title" content="VMware三种网络连接模式">
+<meta property="og:url" content="http://www.adanblog.com/article/73d152bb.html">
 <meta property="og:site_name" content="阿丹博客">
-<meta property="og:description" content="前言 在windows环境下，我要在某个文件夹内搜索包含某个字符串的文件，那么可以用findstr /s /i &amp;quot;string&amp;quot; *.*">
+<meta property="og:description" content="前言 我们使用VMware虚拟软件创建虚拟机的时候，会对网络适配器进行配置，但是它会有三种网络连接方式：桥接方式、NAT模式、仅主机模式。下面我给大家介绍一下三种网络连接的区别。">
 <meta property="og:locale" content="article">
-<meta property="og:updated_time" content="2019-12-11T09:37:27.728Z">
+<meta property="og:updated_time" content="2019-12-30T09:15:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows中搜索目录下所有文件包含某个字符串">
-<meta name="twitter:description" content="前言 在windows环境下，我要在某个文件夹内搜索包含某个字符串的文件，那么可以用findstr /s /i &amp;quot;string&amp;quot; *.*">
+<meta name="twitter:title" content="VMware三种网络连接模式">
+<meta name="twitter:description" content="前言 我们使用VMware虚拟软件创建虚拟机的时候，会对网络适配器进行配置，但是它会有三种网络连接方式：桥接方式、NAT模式、仅主机模式。下面我给大家介绍一下三种网络连接的区别。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://www.adanblog.com/article/Windows中搜索目录下所有文件包含某个字符串.html">
+  <link rel="canonical" href="http://www.adanblog.com/article/73d152bb.html">
 
 
 
 
 
-  <title>Windows中搜索目录下所有文件包含某个字符串 | 阿丹博客</title>
+  <title>VMware三种网络连接模式 | 阿丹博客</title>
   
 
 
@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.adanblog.com/article/Windows中搜索目录下所有文件包含某个字符串.html">
+    <link itemprop="mainEntityOfPage" href="http://www.adanblog.com/article/73d152bb.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="阿丹">
@@ -326,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Windows中搜索目录下所有文件包含某个字符串</h1>
+          <h1 class="post-title" itemprop="name headline">VMware三种网络连接模式</h1>
         
 
         <div class="post-meta">
@@ -338,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-25T15:22:45+08:00">
-                2019-11-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-10T09:23:54+08:00">
+                2019-12-10
               </time>
             
 
@@ -357,8 +357,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/article/Windows中搜索目录下所有文件包含某个字符串.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="article/Windows中搜索目录下所有文件包含某个字符串.html" itemprop="commentCount"></span>
+                <a href="/article/73d152bb.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="article/73d152bb.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -392,10 +392,15 @@
 
       
         <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>在windows环境下，我要在某个文件夹内搜索包含某个字符串的文件，那么可以用<code>findstr /s /i &quot;string&quot; *.*</code></p>
+<p>我们使用VMware虚拟软件创建虚拟机的时候，会对<code>网络适配器</code>进行配置，但是它会有三种网络连接方式：桥接方式、NAT模式、仅主机模式。下面我给大家介绍一下三种网络连接的区别。</p>
 </blockquote>
 <a id="more"></a>
-<p>在windows环境下，在某个文件夹搜索包含某个字符串的文件。<br><code>findstr /s /i &quot;string&quot; *.*</code><br><code>*.*</code>表示所有类型的文件。<br><code>/s</code> 表示当前目录以及所有子目录<br><code>/i</code> 表示不区分大小写</p>
+
+<h3 id="桥接模式"><a href="#桥接模式" class="headerlink" title="桥接模式"></a>桥接模式</h3><p>桥接模式，虚拟机的虚拟网络适配器与主机的物理网络适配器进行交接，机的物理网络适配器和虚拟网络适配器就相当于<strong>处于同一个网段</strong>，虚拟机中的虚拟网络适配器可通过主机中的物理网络适配器<strong>直接访问到外部网络</strong>。可以理解成，在局域网中添加了一台新的、独立的计算机一样，<strong>虚拟机会占用局域网中的一个IP地址</strong>，并且可以和其他终端进行相互访问。</p>
+<h3 id="NAT模式"><a href="#NAT模式" class="headerlink" title="NAT模式"></a>NAT模式</h3><p>使用NAT模式网络连接时，VMware会在主机上建立<strong>单独的专用网络</strong>，用以在主机和虚拟机之间相互通信。虚拟机向外部网络发送的请求数据”包裹”，都会交由NAT网络适配器加上”特殊标记”并以主机的名义转发出去，外部网络返回的响应数据”包裹”，也是先由主机接收，然后交由NAT网络适配器根据”特殊标记”进行识别并转发给对应的虚拟机，因此，虚拟机在外部网络中不必具有自己的IP地址。从外部网络来看，虚拟机和主机在<strong>共享一个IP地址</strong>，默认情况下，<strong>外部网络终端也无法访问到虚拟机</strong>。</p>
+<p>此外，在一台主机上只允许有一个NAT模式的虚拟网络。因此，同一台主机上的多个采用NAT模式网络连接的虚拟机也是可以相互访问的。</p>
+<p>前面我们已经提到，默认情况下，外部网络无法访问到虚拟机，不过我们也可以通过手动修改NAT设置实现端口转发功能，将外部网络发送到主机指定端口的数据转发到指定的虚拟机上。比如，我们在虚拟机的80端口上”建立”了一个站点，只要我们设置端口转发，将主机88端口上的数据转发给虚拟机的80端口，就可以让外部网络通过主机的88端口访问到虚拟机80端口上的站点。</p>
+<h3 id="仅主机模式"><a href="#仅主机模式" class="headerlink" title="仅主机模式"></a>仅主机模式</h3><p>仅主机模式，虚拟网络是一个<strong>全封闭的网络</strong>，它唯一能够访问的就是主机。相对于NAT模式而言，仅主机模式不具备NAT功能，所以<strong>虚拟网络不能连接到Internet</strong>(在主机上安装合适的路由或代理软件，或者在Windows系统的主机上使用Internet连接共享功能，仍然可以让虚拟机连接到Internet或其他网络)。</p>
 
       
       
@@ -426,7 +431,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.adanblog.com/article/Windows中搜索目录下所有文件包含某个字符串.html" title="Windows中搜索目录下所有文件包含某个字符串">http://www.adanblog.com/article/Windows中搜索目录下所有文件包含某个字符串.html</a>
+    <a href="http://www.adanblog.com/article/73d152bb.html" title="VMware三种网络连接模式">http://www.adanblog.com/article/73d152bb.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -441,7 +446,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/电脑技巧/" rel="tag"><i class="fa fa-tag"></i> 电脑技巧</a>
+            <a href="/tags/虚拟机/" rel="tag"><i class="fa fa-tag"></i> 虚拟机</a>
           
         </div>
       
@@ -454,8 +459,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hexo/hexo的next主题美化.html" rel="next" title="hexo的next主题美化">
-                <i class="fa fa-chevron-left"></i> hexo的next主题美化
+              <a href="/article/9b3abaf4.html" rel="next" title="Win10查看屏保的存储位置">
+                <i class="fa fa-chevron-left"></i> Win10查看屏保的存储位置
               </a>
             
           </div>
@@ -464,8 +469,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/article/Win10查看屏保的存储位置.html" rel="prev" title="Win10查看屏保的存储位置">
-                Win10查看屏保的存储位置 <i class="fa fa-chevron-right"></i>
+              <a href="/mysql/d5344ff8.html" rel="prev" title="centos7安装mysql">
+                centos7安装mysql <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -555,7 +560,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -566,7 +571,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -620,7 +625,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#桥接模式"><span class="nav-number">2.</span> <span class="nav-text">桥接模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NAT模式"><span class="nav-number">3.</span> <span class="nav-text">NAT模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#仅主机模式"><span class="nav-number">4.</span> <span class="nav-text">仅主机模式</span></a></li></ol></div>
             
 
           </div>
@@ -800,9 +805,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.adanblog.com/article/Windows中搜索目录下所有文件包含某个字符串.html';
-          this.page.identifier = 'article/Windows中搜索目录下所有文件包含某个字符串.html';
-          this.page.title = 'Windows中搜索目录下所有文件包含某个字符串';
+          this.page.url = 'http://www.adanblog.com/article/73d152bb.html';
+          this.page.identifier = 'article/73d152bb.html';
+          this.page.title = 'VMware三种网络连接模式';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';

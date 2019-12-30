@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="hexo,">
+  <meta name="keywords" content="java,">
 
 
 
@@ -79,21 +79,18 @@
 
 
 
-<meta name="description" content="前言 之前我介绍了hexo的搭建，这次来看看hexo的NexT主题的一些常用的优化。">
-<meta name="keywords" content="hexo">
+<meta name="description" content="java SPI机制SPI的全名为Service Provider Interface。简单来说就是通过配置文件指定接口的实现类。在java.util.ServiceLoader的文档里有比较详细的介绍。我们系统里抽象的各个模块，往往有很多不同的实现方案。那么我们来看看下面这个例子你就能明白了。 例子代码比如一个电视机厂商，要生产3中不同规格的电视机，小型电视机、中型电视机、大型电视机。那么我们可">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo的next主题美化">
-<meta property="og:url" content="http://www.adanblog.com/hexo/hexo的next主题美化.html">
+<meta property="og:title" content="java SPI 与 ServiceLoader">
+<meta property="og:url" content="http://www.adanblog.com/java/fb07f666.html">
 <meta property="og:site_name" content="阿丹博客">
-<meta property="og:description" content="前言 之前我介绍了hexo的搭建，这次来看看hexo的NexT主题的一些常用的优化。">
-<meta property="og:locale" content="hexo">
-<meta property="og:image" content="https://i.loli.net/2019/06/21/5d0c995c86fac81746.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/06/21/5d0c997a60baa24436.jpg">
-<meta property="og:updated_time" content="2019-12-11T09:37:27.730Z">
+<meta property="og:description" content="java SPI机制SPI的全名为Service Provider Interface。简单来说就是通过配置文件指定接口的实现类。在java.util.ServiceLoader的文档里有比较详细的介绍。我们系统里抽象的各个模块，往往有很多不同的实现方案。那么我们来看看下面这个例子你就能明白了。 例子代码比如一个电视机厂商，要生产3中不同规格的电视机，小型电视机、中型电视机、大型电视机。那么我们可">
+<meta property="og:locale" content="java">
+<meta property="og:updated_time" content="2019-12-30T09:15:18.007Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo的next主题美化">
-<meta name="twitter:description" content="前言 之前我介绍了hexo的搭建，这次来看看hexo的NexT主题的一些常用的优化。">
-<meta name="twitter:image" content="https://i.loli.net/2019/06/21/5d0c995c86fac81746.jpg">
+<meta name="twitter:title" content="java SPI 与 ServiceLoader">
+<meta name="twitter:description" content="java SPI机制SPI的全名为Service Provider Interface。简单来说就是通过配置文件指定接口的实现类。在java.util.ServiceLoader的文档里有比较详细的介绍。我们系统里抽象的各个模块，往往有很多不同的实现方案。那么我们来看看下面这个例子你就能明白了。 例子代码比如一个电视机厂商，要生产3中不同规格的电视机，小型电视机、中型电视机、大型电视机。那么我们可">
 
 
 
@@ -123,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://www.adanblog.com/hexo/hexo的next主题美化.html">
+  <link rel="canonical" href="http://www.adanblog.com/java/fb07f666.html">
 
 
 
 
 
-  <title>hexo的next主题美化 | 阿丹博客</title>
+  <title>java SPI 与 ServiceLoader | 阿丹博客</title>
   
 
 
@@ -151,7 +148,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="hexo">
+<body itemscope itemtype="http://schema.org/WebPage" lang="java">
 
   
   
@@ -312,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.adanblog.com/hexo/hexo的next主题美化.html">
+    <link itemprop="mainEntityOfPage" href="http://www.adanblog.com/java/fb07f666.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="阿丹">
@@ -329,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo的next主题美化</h1>
+          <h1 class="post-title" itemprop="name headline">java SPI 与 ServiceLoader</h1>
         
 
         <div class="post-meta">
@@ -341,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-22T14:56:08+08:00">
-                2019-11-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-20T18:05:55+08:00">
+                2019-11-20
               </time>
             
 
@@ -364,8 +361,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
                   </a>
                 </span>
 
@@ -382,8 +379,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/hexo/hexo的next主题美化.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="hexo/hexo的next主题美化.html" itemprop="commentCount"></span>
+                <a href="/java/fb07f666.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="java/fb07f666.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -416,82 +413,52 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>之前我介绍了hexo的搭建，这次来看看hexo的NexT主题的一些常用的优化。</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="开启版权"><a href="#开启版权" class="headerlink" title="开启版权"></a>开启版权</h3><p>配置文件<code>_config.yml</code>中将<code>post_copyright</code>下的<code>enable</code>设为<code>true</code>，即可开启版权声明</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">post_copyright:</span><br><span class="line">  enable: true</span><br><span class="line">  license: CC BY-NC-SA 3.0</span><br><span class="line">  license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/</span><br></pre></td></tr></table></figure>
+        <h3 id="java-SPI机制"><a href="#java-SPI机制" class="headerlink" title="java SPI机制"></a>java SPI机制</h3><p>SPI的全名为Service Provider Interface。简单来说就是通过配置文件指定接口的实现类。在java.util.ServiceLoader的文档里有比较详细的介绍。<br>我们系统里抽象的各个模块，往往有很多不同的实现方案。那么我们来看看下面这个例子你就能明白了。</p>
+<h3 id="例子代码"><a href="#例子代码" class="headerlink" title="例子代码"></a>例子代码</h3><p>比如一个电视机厂商，要生产3中不同规格的电视机，小型电视机、中型电视机、大型电视机。<br>那么我们可以设计：电视机模型接口、3种不同电视机的实现类<br>模型接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shan.test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;</span></span><br><span class="line"><span class="comment"> * TODO 电视机模型接口</span></span><br><span class="line"><span class="comment"> * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> adan</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0, 2019年11月20日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">TelevisionService</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * &lt;pre&gt;</span></span><br><span class="line"><span class="comment">	 * 生产</span></span><br><span class="line"><span class="comment">	 * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>注意：最新版本好像不支持了</p>
-<h3 id="修改文章标签样式"><a href="#修改文章标签样式" class="headerlink" title="修改文章标签样式"></a>修改文章标签样式</h3><p>标签样式默认为#tag，我们可以将其改成带图标的<br>在<code>\themes\next\layout\_macro\post.swig</code>，搜索 <code>rel=&quot;tag&quot;&gt;#</code>，将 <code>#</code> 换成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code></p>
-<h3 id="首页文章显示标签"><a href="#首页文章显示标签" class="headerlink" title="首页文章显示标签"></a>首页文章显示标签</h3><p>在 <code>\themes\next\layout\_macro\post.swig</code> 搜索 <code>post.tags and post.tags.length</code>找到代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if post.tags and post.tags.length and not is_index %&#125;</span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"post-tags"</span>&gt;</span></span><br><span class="line">      &#123;% for tag in post.tags %&#125;</span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for(tag.path) &#125;&#125;"</span> <span class="attr">rel</span>=<span class="string">"tag"</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-tag"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span> &#123;&#123; tag.name &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      &#123;% endfor %&#125;</span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>电视机实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shan.test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;</span></span><br><span class="line"><span class="comment"> * TODO 小型电视机</span></span><br><span class="line"><span class="comment"> * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> adan</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0, 2019年11月20日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SmallTelevisionServiceImp</span> <span class="keyword">implements</span> <span class="title">TelevisionService</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"生产小型电视机"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>把<code>and not is_index</code>去掉<br>修改后：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if post.tags and post.tags.length %&#125;</span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"post-tags"</span>&gt;</span></span><br><span class="line">      &#123;% for tag in post.tags %&#125;</span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for(tag.path) &#125;&#125;"</span> <span class="attr">rel</span>=<span class="string">"tag"</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-tag"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span> &#123;&#123; tag.name &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      &#123;% endfor %&#125;</span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;</span></span><br><span class="line"><span class="comment"> * TODO 中型电视机</span></span><br><span class="line"><span class="comment"> * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> adan</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0, 2019年11月20日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MidsizeTelevisionServiceImp</span> <span class="keyword">implements</span> <span class="title">TelevisionService</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"生产中型电视机"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="博客网站图标"><a href="#博客网站图标" class="headerlink" title="博客网站图标"></a>博客网站图标</h3><p>我们博客的默认图标是H，不过我们可以修改图标。<br>制作两张图片，一张16x16，一张32x32，放到\source\images中。然后看下面代码，对应设置small与medium就行了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: /images/favicon-16x16.png</span><br><span class="line">  medium: /images/favicon-32x32.png</span><br><span class="line">  apple_touch_icon: /images/apple-touch-icon-next.png</span><br><span class="line">  safari_pinned_tab: /images/logo.svg</span><br><span class="line">  #android_manifest: /images/manifest.json</span><br><span class="line">  #ms_browserconfig: /images/browserconfig.xml</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;</span></span><br><span class="line"><span class="comment"> * TODO 大型电视机</span></span><br><span class="line"><span class="comment"> * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> adan</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0, 2019年11月20日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LargeTelevisionServiceImpl</span> <span class="keyword">implements</span> <span class="title">TelevisionService</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"生产大型电视机"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="作者头像设置"><a href="#作者头像设置" class="headerlink" title="作者头像设置"></a>作者头像设置</h3><p>我们设置的头像默认是方形，但可以设置头像为圆形<br>打开<code>\themes\next\source\css\_common\components\sidebar\sidebar-author.styl</code>文件<br>在site-author-image样式中加上<code>border-radius: 100px</code>如下代码：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.site-author-image</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">  <span class="attribute">padding</span>: $site-author-image-padding;</span><br><span class="line">  <span class="attribute">max-width</span>: $site-author-image-width;</span><br><span class="line">  <span class="attribute">height</span>: $site-author-image-height;</span><br><span class="line">  <span class="attribute">border</span>: $site-author-image-border-width solid $site-author-image-border-color;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>好像新版本可以直接在配置文件中设置，我找了半天没有，就直接改样式了。现在贴出新版的代码出来。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">avatar:</span><br><span class="line">  url: /images/author.jpg  #头像图片</span><br><span class="line">  rounded: true #鼠标放在头像上时是否旋转</span><br><span class="line">  opacity: 1 #头像放缩指数</span><br><span class="line">  rotated: true #头像是否设为圆形，默认为矩形</span><br></pre></td></tr></table></figure>
-
-<h3 id="开启首页文章显示摘要"><a href="#开启首页文章显示摘要" class="headerlink" title="开启首页文章显示摘要"></a>开启首页文章显示摘要</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#选取博客正文&lt;!--more--&gt;前的内容</span><br><span class="line">scroll_to_more: true </span><br><span class="line"></span><br><span class="line"># Automatically saving scroll position on each post/page in cookies.</span><br><span class="line">save_scroll: false</span><br><span class="line"></span><br><span class="line">#自动截取摘要</span><br><span class="line">excerpt_description: true </span><br><span class="line"></span><br><span class="line">#自动截取一定程度的摘要</span><br><span class="line">auto_excerpt:</span><br><span class="line">  enable: true </span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
-
-<h3 id="添加「分类」页面"><a href="#添加「分类」页面" class="headerlink" title="添加「分类」页面"></a>添加「分类」页面</h3><p>创建页面：<code>$ hexo new page categories</code><br>编辑刚新建的页面，将页面的 type 设置为 categories ，主题将自动为这个页面显示分类。页面内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: 分类</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>上面已经定义好了，下面我们来实现生产3种不同电视机。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shan.test;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.ServiceLoader;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Hello world!</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">( String[] args )</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    	App app=<span class="keyword">new</span> App();</span><br><span class="line">    	app.production2();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//生产</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	TelevisionService small=<span class="keyword">new</span> SmallTelevisionServiceImp();</span><br><span class="line">    	small.production();</span><br><span class="line">    	TelevisionService midsize=<span class="keyword">new</span> MidsizeTelevisionServiceImp();</span><br><span class="line">    	midsize.production();</span><br><span class="line">    	TelevisionService large=<span class="keyword">new</span> LargeTelevisionServiceImpl();</span><br><span class="line">    	large.production();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>注意：如果有集成评论服务，页面也会带有评论。 若需要关闭的话，请添加字段 comments 并将值设置为 false。<br>如果页面标题出现乱码，把文件另存为utf-8格式</p>
+<p>打印如下：<br>生产小型电视机<br>生产中型电视机<br>生产大型电视机</p>
 </blockquote>
-<h3 id="添加「标签」页面"><a href="#添加「标签」页面" class="headerlink" title="添加「标签」页面"></a>添加「标签」页面</h3><p>创建页面：<code>$ hexo new page tags</code><br>编辑刚新建的页面，将页面的 type 设置为 tags ，主题将自动为这个页面显示分类。页面内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: 标签</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：如果有集成评论服务，页面也会带有评论。 若需要关闭的话，请添加字段 comments 并将值设置为 false。<br>如果页面标题出现乱码，把文件另存为utf-8格式</p>
-</blockquote>
-<h3 id="开启统计功能"><a href="#开启统计功能" class="headerlink" title="开启统计功能"></a>开启统计功能</h3><p>编辑 <code>主题配置文件</code> 中的<code>busuanzi_count</code>的配置项。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">  # 是否开启</span><br><span class="line">  enable: true</span><br><span class="line">  # 站点访问人数统计</span><br><span class="line">  site_uv: true</span><br><span class="line">  site_uv_header: 本站访客数</span><br><span class="line">  site_uv_footer: 人次</span><br><span class="line">  # 站点访问量统计</span><br><span class="line">  site_pv: true</span><br><span class="line">  site_pv_header: 本站总访问量</span><br><span class="line">  site_pv_footer: 次</span><br><span class="line">  # 站点文章阅读量统计</span><br><span class="line">  page_pv: true</span><br><span class="line">  page_pv_header: 本文总阅读量</span><br><span class="line">  page_pv_footer: 次</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：由于不蒜子域名更换了，所以安装官网的这种配置是没有效果的。</p>
-</blockquote>
-<p>解决方案：<br>打开themes\next\layout_third-party\analytics\busuanzi-counter.swig<br>找到如下代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script async src=&quot;https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>修改为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script async src=&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="文章后添加结束标语"><a href="#文章后添加结束标语" class="headerlink" title="文章后添加结束标语"></a>文章后添加结束标语</h3><p>1.在<code>themes\next\layout\_macro</code>中创建<code>post-end-tag.swig</code>文件，并在其中添加代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    &#123;% if not is_index %&#125;</span><br><span class="line">        &lt;div style=&quot;text-align:center;color: #ccc;font-size:22px;&quot;&gt;-------------本文结束&lt;i class=&quot;fa fa-paw&quot;&gt;&lt;/i&gt;感谢您的阅读-------------&lt;/div&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-<p>2.修改<code>themes\next\layout\_macro\post.swig</code>文件，在POST BODY块最后结束标签前添加内容，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &#123;% if not is_index %&#125;</span><br><span class="line">    &#123;% include &apos;post-end-tag.swig&apos; %&#125;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-<p>3.打开 <code>主题配置文件</code> ，添加代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 文章末尾添加“本文结束”标记</span><br><span class="line">passage_end_tag:</span><br><span class="line">  enabled: true</span><br></pre></td></tr></table></figure>
-
-<h3 id="开启评论功能"><a href="#开启评论功能" class="headerlink" title="开启评论功能"></a>开启评论功能</h3><p>我使用的是valine评论系统，由于valine评论系统是基于leancloud开发的，所以我们还需要注册leancloud来支持</p>
+<p>这个时候，这个电视机厂商扩展业务了，要提供了代加工电视机业务，帮别人生产电视机。<br>我们要约定生产电视机的标准了，让其他厂商比较方便接入。这就是SPI<br>规定：</p>
 <ol>
-<li><p>获取LeanCloud的APP ID和APP Key<br>登录或注册 LeanCloud, 进入控制台后点击左下角创建应用：<br><img src="https://i.loli.net/2019/06/21/5d0c995c86fac81746.jpg" alt="评论" title="评论"><br>应用创建好以后，进入刚刚创建的应用，选择左下角的设置&gt;应用Key，然后就能看到你的APP ID和APP Key了：<br><img src="https://i.loli.net/2019/06/21/5d0c997a60baa24436.jpg" alt="appid" title="appid"></p>
-</li>
-<li><p>配置valine<br>编辑 <code>主题配置文件</code>,搜索valine，修改相关配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">valine:</span><br><span class="line">  enable: true</span><br><span class="line">  appid:  APP ID # LeanCloud的APP ID</span><br><span class="line">  appkey:  APP Key # LeanCloud的APP Key</span><br><span class="line">  notify: false # 邮件提醒 , https://github.com/xCss/Valine/wiki</span><br><span class="line">  verify: false # 是否开启验证码</span><br><span class="line">  placeholder: 期待你的高见 # 评论提示</span><br><span class="line">  avatar: mm # 头像</span><br><span class="line">  guest_info: nick,mail,link # custom comment header</span><br><span class="line">  pageSize: 10 # pagination size</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>创建接口实现</li>
+<li>在resources资源目录下创建META-INF/services文件夹</li>
+<li>在services文件夹中创建，以接口类全名命名的文件</li>
+<li>在文件中加入接口实现类全名</li>
 </ol>
-<h3 id="开启本地搜索功能"><a href="#开启本地搜索功能" class="headerlink" title="开启本地搜索功能"></a>开启本地搜索功能</h3><p>1.安装 hexo-generator-searchdb，在站点的根目录下执行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<p>我们改造一下项目<br>第一步，在resources中创建META-INF/services文件夹，并在services中创建com.shan.test.TelevisionService文件<br>第二步：在com.shan.test.TelevisionService文件中写入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">com.shan.test.LargeTelevisionServiceImpl</span><br><span class="line">com.shan.test.MidsizeTelevisionServiceImp</span><br><span class="line">com.shan.test.SmallTelevisionServiceImp</span><br></pre></td></tr></table></figure>
 
-<p>2.编辑 <code>站点配置文件</code>，新增以下内容到任意位置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
+<p>第三步：改造代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shan.test;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.ServiceLoader;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Hello world!</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">( String[] args )</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    	App app=<span class="keyword">new</span> App();</span><br><span class="line">    	app.production2();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//平常实现方式</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	TelevisionService small=<span class="keyword">new</span> SmallTelevisionServiceImp();</span><br><span class="line">    	small.production();</span><br><span class="line">    	TelevisionService midsize=<span class="keyword">new</span> MidsizeTelevisionServiceImp();</span><br><span class="line">    	midsize.production();</span><br><span class="line">    	TelevisionService large=<span class="keyword">new</span> LargeTelevisionServiceImpl();</span><br><span class="line">    	large.production();</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//通过ServiceLoader来实现</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ServiceLoader&lt;TelevisionService&gt; loadedImpl = ServiceLoader.load(TelevisionService.class);</span><br><span class="line">		Iterator&lt;TelevisionService&gt; it = loadedImpl.iterator();</span><br><span class="line">		<span class="keyword">while</span> (it.hasNext()) &#123;</span><br><span class="line">			TelevisionService service = it.next();</span><br><span class="line">			service.production();</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>3.编辑 <code>主题配置文件</code>，启用本地搜索功能：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>运行打印如下：<br>生产小型电视机<br>生产中型电视机<br>生产大型电视机</p>
+</blockquote>
+<p>博主，你貌似描述清楚SPI的意思，但其他厂商怎么接入呢？<br>别急，马上来实现，再次改造项目（这个时候可能需要看源码了）<br>源码地址：<a href="https://github.com/adanblog/sourceCode.git" target="_blank" rel="noopener">https://github.com/adanblog/sourceCode.git</a></p>
+<p>第一步：改造项目，把原来的一个项目拆分成2两个<br>SPITestApi,把电视机模型接口TelevisionService.java移到里面。<br>SPITest项目引用SPITestApi项目。</p>
+<p>第二步：新厂商需要实现我们生产电视机的接口，<br>新建项目SPITest2，引用SPITestApi项目。<br>创建电视机的实现类，现在这个厂商要生产50寸的电视机</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shan.test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;</span></span><br><span class="line"><span class="comment"> * TODO 50寸电视机</span></span><br><span class="line"><span class="comment"> * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> adan</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0, 2019年11月20日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FiftyTelevisionServiceImpl</span> <span class="keyword">implements</span> <span class="title">TelevisionService</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">production</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"生产50寸电视机"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在resources中创建META-INF/services文件夹，并创建com.shan.test.TelevisionService文件<br>写入com.shan.test.FiftyTelevisionServiceImpl</p>
+<p>第三步，在SPITest项目中引用SPITest2项目<br>第四步，运行SPITest项目中app类中的main方法你会神奇的发现50寸电视机也生产出来了。</p>
+<blockquote>
+<p>打印如下：<br>生产大型电视机<br>生产中型电视机<br>生产小型电视机<br>生产50寸电视机</p>
+</blockquote>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>SPI被广泛使用在第三方插件式类库的加载，最常见的如JDBC、JNDI、JCE(Java加密模块扩展)等类库。理解ServiceLoader的工作原理有助于编写扩展性良好的可插拔的类库。<br>springBoot启动也是这种思想来实现的。</p>
+<h3 id="源码地址"><a href="#源码地址" class="headerlink" title="源码地址"></a>源码地址</h3><p><a href="https://github.com/adanblog/sourceCode.git" target="_blank" rel="noopener">https://github.com/adanblog/sourceCode.git</a></p>
+
       
       
       <div>
@@ -521,7 +488,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.adanblog.com/hexo/hexo的next主题美化.html" title="hexo的next主题美化">http://www.adanblog.com/hexo/hexo的next主题美化.html</a>
+    <a href="http://www.adanblog.com/java/fb07f666.html" title="java SPI 与 ServiceLoader">http://www.adanblog.com/java/fb07f666.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -536,7 +503,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
           
         </div>
       
@@ -549,8 +516,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/idea/IntelliJIDEA汉化.html" rel="next" title="IntelliJ IDEA 汉化">
-                <i class="fa fa-chevron-left"></i> IntelliJ IDEA 汉化
+              <a href="/springBoot/d95f9e5a.html" rel="next" title="springBoot java -jar xxx.jar 报 “xxx中没有主清单属性”">
+                <i class="fa fa-chevron-left"></i> springBoot java -jar xxx.jar 报 “xxx中没有主清单属性”
               </a>
             
           </div>
@@ -559,8 +526,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/article/Windows中搜索目录下所有文件包含某个字符串.html" rel="prev" title="Windows中搜索目录下所有文件包含某个字符串">
-                Windows中搜索目录下所有文件包含某个字符串 <i class="fa fa-chevron-right"></i>
+              <a href="/idea/8468a2bd.html" rel="prev" title="IntelliJ IDEA 汉化">
+                IntelliJ IDEA 汉化 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -650,7 +617,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -661,7 +628,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -715,7 +682,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启版权"><span class="nav-number">2.</span> <span class="nav-text">开启版权</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改文章标签样式"><span class="nav-number">3.</span> <span class="nav-text">修改文章标签样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首页文章显示标签"><span class="nav-number">4.</span> <span class="nav-text">首页文章显示标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#博客网站图标"><span class="nav-number">5.</span> <span class="nav-text">博客网站图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作者头像设置"><span class="nav-number">6.</span> <span class="nav-text">作者头像设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启首页文章显示摘要"><span class="nav-number">7.</span> <span class="nav-text">开启首页文章显示摘要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加「分类」页面"><span class="nav-number">8.</span> <span class="nav-text">添加「分类」页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加「标签」页面"><span class="nav-number">9.</span> <span class="nav-text">添加「标签」页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启统计功能"><span class="nav-number">10.</span> <span class="nav-text">开启统计功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章后添加结束标语"><span class="nav-number">11.</span> <span class="nav-text">文章后添加结束标语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启评论功能"><span class="nav-number">12.</span> <span class="nav-text">开启评论功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启本地搜索功能"><span class="nav-number">13.</span> <span class="nav-text">开启本地搜索功能</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#java-SPI机制"><span class="nav-number">1.</span> <span class="nav-text">java SPI机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子代码"><span class="nav-number">2.</span> <span class="nav-text">例子代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">3.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码地址"><span class="nav-number">4.</span> <span class="nav-text">源码地址</span></a></li></ol></div>
             
 
           </div>
@@ -895,9 +862,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.adanblog.com/hexo/hexo的next主题美化.html';
-          this.page.identifier = 'hexo/hexo的next主题美化.html';
-          this.page.title = 'hexo的next主题美化';
+          this.page.url = 'http://www.adanblog.com/java/fb07f666.html';
+          this.page.identifier = 'java/fb07f666.html';
+          this.page.title = 'java SPI 与 ServiceLoader';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
