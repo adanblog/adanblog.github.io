@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="linux,mysql,">
+  <meta name="keywords" content="java,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="前言 今天我来给大家介绍在linux环境中如果安装mysql,我的操作系统是centos7.5,所有下面我所有操作步骤都在centos7.5环境下完成的。">
-<meta name="keywords" content="linux,mysql">
+<meta name="description" content="引言 Nashorn 一个 javascript 引擎。 从JDK 1.8开始，Nashorn取代Rhino(JDK 1.6, JDK1.7)成为Java的嵌入式JavaScript引擎。Nashorn完全支持ECMAScript 5.1规范以及一些扩展。它使用基于JSR 292的新语言特性，其中包含在JDK 7中引入的 invokedynamic，将JavaScript编译成Java字节码。与先">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="centos7安装mysql">
-<meta property="og:url" content="http://www.adanblog.com/linuxs/d5344ff8.html">
+<meta property="og:title" content="jdk8新特性之七 Nashorn JavaScript">
+<meta property="og:url" content="http://www.adanblog.com/java/f4083af9.html">
 <meta property="og:site_name" content="阿丹博客">
-<meta property="og:description" content="前言 今天我来给大家介绍在linux环境中如果安装mysql,我的操作系统是centos7.5,所有下面我所有操作步骤都在centos7.5环境下完成的。">
-<meta property="og:locale" content="linuxs">
-<meta property="og:updated_time" content="2019-12-23T02:19:52.077Z">
+<meta property="og:description" content="引言 Nashorn 一个 javascript 引擎。 从JDK 1.8开始，Nashorn取代Rhino(JDK 1.6, JDK1.7)成为Java的嵌入式JavaScript引擎。Nashorn完全支持ECMAScript 5.1规范以及一些扩展。它使用基于JSR 292的新语言特性，其中包含在JDK 7中引入的 invokedynamic，将JavaScript编译成Java字节码。与先">
+<meta property="og:locale" content="java">
+<meta property="og:updated_time" content="2020-02-29T12:05:18.383Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="centos7安装mysql">
-<meta name="twitter:description" content="前言 今天我来给大家介绍在linux环境中如果安装mysql,我的操作系统是centos7.5,所有下面我所有操作步骤都在centos7.5环境下完成的。">
+<meta name="twitter:title" content="jdk8新特性之七 Nashorn JavaScript">
+<meta name="twitter:description" content="引言 Nashorn 一个 javascript 引擎。 从JDK 1.8开始，Nashorn取代Rhino(JDK 1.6, JDK1.7)成为Java的嵌入式JavaScript引擎。Nashorn完全支持ECMAScript 5.1规范以及一些扩展。它使用基于JSR 292的新语言特性，其中包含在JDK 7中引入的 invokedynamic，将JavaScript编译成Java字节码。与先">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://www.adanblog.com/linuxs/d5344ff8.html">
+  <link rel="canonical" href="http://www.adanblog.com/java/f4083af9.html">
 
 
 
 
 
-  <title>centos7安装mysql | 阿丹博客</title>
+  <title>jdk8新特性之七 Nashorn JavaScript | 阿丹博客</title>
   
 
 
@@ -148,7 +148,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="linuxs">
+<body itemscope itemtype="http://schema.org/WebPage" lang="java">
 
   
   
@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.adanblog.com/linuxs/d5344ff8.html">
+    <link itemprop="mainEntityOfPage" href="http://www.adanblog.com/java/f4083af9.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="阿丹">
@@ -326,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">centos7安装mysql</h1>
+          <h1 class="post-title" itemprop="name headline">jdk8新特性之七 Nashorn JavaScript</h1>
         
 
         <div class="post-meta">
@@ -338,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-11T19:25:06+08:00">
-                2019-12-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-29T20:12:01+08:00">
+                2020-02-29
               </time>
             
 
@@ -361,8 +361,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
                   </a>
                 </span>
 
@@ -379,8 +379,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/linuxs/d5344ff8.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="linuxs/d5344ff8.html" itemprop="commentCount"></span>
+                <a href="/java/f4083af9.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="java/f4083af9.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -413,131 +413,37 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>今天我来给大家介绍在linux环境中如果安装mysql,我的操作系统是centos7.5,所有下面我所有操作步骤都在centos7.5环境下完成的。</p>
+        <h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><blockquote>
+<p>Nashorn 一个 javascript 引擎。 从JDK 1.8开始，Nashorn取代Rhino(JDK 1.6, JDK1.7)成为Java的嵌入式JavaScript引擎。Nashorn完全支持ECMAScript 5.1规范以及一些扩展。它使用基于JSR 292的新语言特性，其中包含在JDK 7中引入的 invokedynamic，将JavaScript编译成Java字节码。与先前的Rhino实现相比，这带来了2到10倍的性能提升。</p>
 </blockquote>
 <a id="more"></a>
 
-<p><strong>检查系统是否安装mysql</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># rpm -qa | grep mysql</span><br></pre></td></tr></table></figure>
+<h3 id="jjs"><a href="#jjs" class="headerlink" title="jjs"></a>jjs</h3><p>jjs是基于Nashorn引擎的命令行工具。它接受一些javaScript源码为参数，并且执行这些源代码。<br>例如，我们创建一个具有如下内容的sample.js文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(&apos;Hello World!&apos;);</span><br></pre></td></tr></table></figure>
 
-<p> 如果返回空值，说明没有安装<br> 从最新版本的linux系统开始，默认的是 Mariadb而不是mysql！</p>
-<p><strong>查看是否有wget命令</strong><br>在命令行中输入:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># wget</span><br></pre></td></tr></table></figure>
+<p>打开控制台(在windows下定位到jdk/bin目录下)，输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jjs sample.js</span><br></pre></td></tr></table></figure>
 
-<p>如果出现 <code>未找到命令</code>,再执行下面命令:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum -y install wget</span><br></pre></td></tr></table></figure>
+<p>输出结果是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
 
-<h3 id="安装MySQL的-Yum-Repository"><a href="#安装MySQL的-Yum-Repository" class="headerlink" title="安装MySQL的 Yum Repository"></a>安装MySQL的 Yum Repository</h3><p><strong>在mysql官方找rmp文件</strong></p>
-<p>到这里找到对应系统的版本，<a href="https://dev.mysql.com/downloads/repo/yum/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/repo/yum/</a><br>点击<code>Download</code>，到了下载页面有两个大的按钮，在两个按钮下找到<br><code>No thanks, just start my download.</code>右键复制链接地址。<br>黏贴后就是<a href="https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm" target="_blank" rel="noopener">https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</a></p>
-<p><strong>下载rpm文件并安装</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># wget https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</span><br></pre></td></tr></table></figure>
+<h3 id="jjs-交互式编程"><a href="#jjs-交互式编程" class="headerlink" title="jjs 交互式编程"></a>jjs 交互式编程</h3><p>打开控制台(在windows下定位到jdk/bin目录下)，输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\Java\jdk1.8.0_162\bin&gt;jjs</span><br><span class="line">jjs&gt; print(&quot;Hello,World!&quot;)</span><br><span class="line">Hello,World!</span><br><span class="line">jjs&gt; quit()</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># rpm -Uvh mysql80-community-release-el7-1.noarch.rpm</span><br></pre></td></tr></table></figure>
+<h3 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h3><p>打开控制台(在windows下定位到jdk/bin目录下)，输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\Java\jdk1.8.0_162\bin&gt;jjs -- a b c</span><br><span class="line">jjs&gt; print(&apos;字母：&apos;+arguments.join(&quot;, &quot;))</span><br><span class="line">字母：a, b, c</span><br><span class="line">jjs&gt;</span><br></pre></td></tr></table></figure>
 
-<p>接下来就可以正式安装mysql了,但是呢?如果直接安装默认的是8.0版本的,我在这里演需要安装5.7版本.如果需要的就是8.0版本可以跳过下一步</p>
-<p><strong>修改安装默认为mysql5.7版本</strong><br>修改配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># vi /etc/yum.repos.d/mysql-community.repo</span><br></pre></td></tr></table></figure>
+<h4 id="java中调用javaScript"><a href="#java中调用javaScript" class="headerlink" title="java中调用javaScript"></a>java中调用javaScript</h4><p>使用 ScriptEngineManager, JavaScript 代码可以在 Java 中执行，实例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package com.adanblog.demo;</span><br><span class="line"></span><br><span class="line">import javax.script.ScriptEngine;</span><br><span class="line">import javax.script.ScriptEngineManager;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * java8新特性之七Nashorn JavaScript</span><br><span class="line"> * @author www.adanblog.com</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class NashornJavaScriptTest &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		ScriptEngineManager scriptEngineManager=new ScriptEngineManager();</span><br><span class="line">		ScriptEngine scriptEngine=scriptEngineManager.getEngineByName(&quot;nashorn&quot;);</span><br><span class="line">		String name=&quot;Runoob&quot;;</span><br><span class="line">		Integer result=null;</span><br><span class="line">		try &#123;</span><br><span class="line">			scriptEngine.eval(&quot;print(&apos;&quot; + name + &quot;&apos;)&quot;);</span><br><span class="line">			result=(Integer)scriptEngine.eval(&quot;3+3&quot;);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			System.out.println(&quot;执行脚本错误: &quot;+ e.getMessage());</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(result.toString());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>这里我用的是mysql5.7的所以把5.7的enabled=1,把8.0的enabled=0 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># Enable to use MySQL 5.7</span><br><span class="line">[mysql57-community]</span><br><span class="line">name=MySQL 5.7 Community Server</span><br><span class="line">baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/7/$basearch/</span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql</span><br><span class="line"></span><br><span class="line">[mysql80-community]</span><br><span class="line">name=MySQL 8.0 Community Server</span><br><span class="line">baseurl=http://repo.mysql.com/yum/mysql-8.0-community/el/7/$basearch/</span><br><span class="line">enabled=0</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql</span><br></pre></td></tr></table></figure>
+<p>运行输出结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Runoob</span><br><span class="line">6</span><br></pre></td></tr></table></figure>
 
-<p>修改好保存退出</p>
-<p><strong>安装mysql</strong><br>执行:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install mysql mysql-server mysql-devel</span><br></pre></td></tr></table></figure>
+<h3 id="JavaScript-中调用-Java"><a href="#JavaScript-中调用-Java" class="headerlink" title="JavaScript 中调用 Java"></a>JavaScript 中调用 Java</h3><p>在sample.js文件中加上下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var BigDecimal = Java.type(&apos;java.math.BigDecimal&apos;);</span><br><span class="line"></span><br><span class="line">function calculate(amount, percentage) &#123;</span><br><span class="line"></span><br><span class="line">   var result = new BigDecimal(amount).multiply(</span><br><span class="line">   new BigDecimal(percentage)).divide(new BigDecimal(&quot;100&quot;), 2, BigDecimal.ROUND_HALF_EVEN);</span><br><span class="line">   </span><br><span class="line">   return result.toPlainString();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var result = calculate(568000000000000000023,13.9);</span><br><span class="line">print(result);</span><br></pre></td></tr></table></figure>
 
-<p>这步可能会花些时间，安装完成后就会覆盖掉之前的mariadb</p>
-<h3 id="MySQL数据库设置"><a href="#MySQL数据库设置" class="headerlink" title="MySQL数据库设置"></a>MySQL数据库设置</h3><p><strong>首先启动MySQL</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># systemctl start  mysqld.service</span><br></pre></td></tr></table></figure>
-
-<p><strong>查看MySQL运行状态：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># systemctl status mysqld.service</span><br></pre></td></tr></table></figure>
-
-<p>输出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysqld.service - MySQL Server</span><br><span class="line">   Loaded: loaded (/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled)</span><br><span class="line">   Active: active (running) since Wed 2019-12-11 09:31:06 CST; 10s ago</span><br><span class="line">     Docs: man:mysqld(8)</span><br><span class="line">           http://dev.mysql.com/doc/refman/en/using-systemd.html</span><br><span class="line">  Process: 2712 ExecStart=/usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid $MYSQLD_OPTS (code=exited, status=0/SUCCESS)</span><br><span class="line">  Process: 2662 ExecStartPre=/usr/bin/mysqld_pre_systemd (code=exited, status=0/SUCCESS)</span><br><span class="line"> Main PID: 2715 (mysqld)</span><br><span class="line">   CGroup: /system.slice/mysqld.service</span><br><span class="line">           └─2715 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>补上一个命令<br>重新启动mysql服务：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># systemctl restart  mysqld.service</span><br></pre></td></tr></table></figure>
-
-<p><strong>找出mysql的登录密码</strong><br>此时MySQL已经开始正常运行，不过要想进入MySQL还得先找出此时root用户的密码，通过如下命令可以在日志文件中找出密码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># grep &quot;password&quot; /var/log/mysqld.log</span><br></pre></td></tr></table></figure>
-
-<p>输出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2019-12-11T01:31:02.794484Z 1 [Note] A temporary password is generated for root@localhost: bpi+UkOPe7d/</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>root@localhost: 后面的<code>bpi+UkOPe7d/</code>就是密码了。</p>
-</blockquote>
-<p><strong>进入数据库修改密码</strong><br>如下命令进入数据库：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># mysql -uroot -p</span><br></pre></td></tr></table></figure>
-
-<p>输入初始密码，此时不能做任何事情，因为MySQL默认必须修改密码之后才能操作数据库。<br>修改密码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;123456&apos;;</span><br></pre></td></tr></table></figure>
-
-<p>这里有个问题，新密码设置的时候如果设置的过于简单会报错：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR 1819 (HY000): Your password does not satisfy the current policy requirements</span><br></pre></td></tr></table></figure>
-
-<p>原因是因为MySQL有密码设置的规范，具体是与validate_password_policy的值有关,<br>修改密码规则(需要先给默认账户改好密码后执行才生效)：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; set global validate_password_policy=0;</span><br><span class="line">mysql&gt; set global validate_password_length=1;</span><br></pre></td></tr></table></figure>
-
-<p>此时密码就可以设置的很简单，例如1234之类的。到此数据库的密码设置就完成了。<br>退出mysql:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;exit;</span><br></pre></td></tr></table></figure>
-
-<p>再登录试试修改密码是否成功：登录Mysql：<code>输入mysql -u帐号 -p密码</code> 这是登陆</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># mysql -uroot -p123456</span><br></pre></td></tr></table></figure>
-
-<p>但此时还有一个问题，就是因为安装了Yum Repository，以后每次yum操作都会自动更新，需要把这个卸载掉：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum -y mysql80-community-release.noarch</span><br></pre></td></tr></table></figure>
-
-<p>此时才算真的完成了。</p>
-<h3 id="检查mysql端口是否开启"><a href="#检查mysql端口是否开启" class="headerlink" title="检查mysql端口是否开启"></a>检查mysql端口是否开启</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># firewall-cmd --query-port=3306/tcp</span><br></pre></td></tr></table></figure>
-
-<p>查看3306端口是否开启，yes表示开启，no表示未开启。还有一种情况，防火墙没有打开如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FirewallD is not running</span><br></pre></td></tr></table></figure>
-
-<p>看需要双方开启防火墙<br>启动防火墙：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># systemctl start firewalld</span><br></pre></td></tr></table></figure>
-
-<p>开机启用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># systemctl enable firewalld</span><br></pre></td></tr></table></figure>
-
-<p>永久开启3306端口：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># firewall-cmd --zone=public --add-port=3306/tcp --permanent</span><br></pre></td></tr></table></figure>
-
-<p>重新载入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-
-<h3 id="mysql权限与远程连接"><a href="#mysql权限与远程连接" class="headerlink" title="mysql权限与远程连接"></a>mysql权限与远程连接</h3><p><strong>创建用户</strong><br>以root用户登录到数据库进行用户创建命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;username&apos;@&apos;host&apos; IDENTIFIED BY &apos;password&apos;;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>username——将要创建的用户名；<br> host——指定该用户在哪个主机上可以登录，”localhost”指该用户只能在本地登录，不能在另外一台机器上远程登录，如果想远程登录，将”localhost”改为”%”，表示在任何一台电脑上都可以登录；也可以指定某台机器可以远程登录；<br>password——该用户的登录密码，密码可以为空，若为空则该用户可以不需要密码登录服务器。</p>
-</blockquote>
-<p>例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;test_admin&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;admin@123_S&apos;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>授权</strong><br>以root用户登录到数据库进行授权</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRANT privileges ON databasename.tablename TO &apos;username&apos;@&apos;host&apos;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>privileges——用户的操作权限，如SELECT等。如果授予所有权限则使用ALL。<br> databasename——数据库名称。tablename——表名。如果要给该用户授予对所有数据库和表的相应操作权限则可用<em>表示，例如</em>.*<br> flush privileges;表示刷新权限</p>
-</blockquote>
-<p> 例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;test_amin&apos;@&apos;%&apos; IDENTIFIED BY &apos;admin@123_S&apos; WITH GRANT OPTION;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
-
-<p><strong>撤销用户权限</strong><br>命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REVOKE privilege ON databasename.tablename FROM &apos;username&apos;@&apos;host&apos;;</span><br></pre></td></tr></table></figure>
-
-<p>例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REVOKE SELECT ON *.* FROM &apos;test_amin&apos;@&apos;%&apos;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>删除账户及权限</strong><br>命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop user &apos;username&apos;@&apos;host&apos;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>查看用户的授权</strong><br>命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW GRANTS FOR &apos;username&apos;@&apos;host&apos;;</span><br></pre></td></tr></table></figure>
+<p>打开控制台(在windows下定位到jdk/bin目录下)，输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\Java\jdk1.8.0_162\bin&gt;jjs sample.js</span><br><span class="line">Hello World!</span><br><span class="line">78952000000000002017.94</span><br></pre></td></tr></table></figure>
 
 
       
@@ -569,7 +475,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.adanblog.com/linuxs/d5344ff8.html" title="centos7安装mysql">http://www.adanblog.com/linuxs/d5344ff8.html</a>
+    <a href="http://www.adanblog.com/java/f4083af9.html" title="jdk8新特性之七 Nashorn JavaScript">http://www.adanblog.com/java/f4083af9.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -584,9 +490,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
-          
-            <a href="/tags/mysql/" rel="tag"><i class="fa fa-tag"></i> mysql</a>
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
           
         </div>
       
@@ -599,8 +503,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/article/73d152bb.html" rel="next" title="VMware三种网络连接模式">
-                <i class="fa fa-chevron-left"></i> VMware三种网络连接模式
+              <a href="/java/5d7a94a.html" rel="next" title="jdk8新特性之六Optional类">
+                <i class="fa fa-chevron-left"></i> jdk8新特性之六Optional类
               </a>
             
           </div>
@@ -609,8 +513,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/linuxs/3cbebd87.html" rel="prev" title="linux中安装nginx">
-                linux中安装nginx <i class="fa fa-chevron-right"></i>
+              <a href="/java/e9dc4b97.html" rel="prev" title="jdk8新特性之九Base64">
+                jdk8新特性之九Base64 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -700,7 +604,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -711,7 +615,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -765,7 +669,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装MySQL的-Yum-Repository"><span class="nav-number">2.</span> <span class="nav-text">安装MySQL的 Yum Repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL数据库设置"><span class="nav-number">3.</span> <span class="nav-text">MySQL数据库设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检查mysql端口是否开启"><span class="nav-number">4.</span> <span class="nav-text">检查mysql端口是否开启</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql权限与远程连接"><span class="nav-number">5.</span> <span class="nav-text">mysql权限与远程连接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jjs"><span class="nav-number">2.</span> <span class="nav-text">jjs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jjs-交互式编程"><span class="nav-number">3.</span> <span class="nav-text">jjs 交互式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传递参数"><span class="nav-number">4.</span> <span class="nav-text">传递参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#java中调用javaScript"><span class="nav-number">4.1.</span> <span class="nav-text">java中调用javaScript</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-中调用-Java"><span class="nav-number">5.</span> <span class="nav-text">JavaScript 中调用 Java</span></a></li></ol></div>
             
 
           </div>
@@ -785,7 +689,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -945,9 +849,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.adanblog.com/linuxs/d5344ff8.html';
-          this.page.identifier = 'linuxs/d5344ff8.html';
-          this.page.title = 'centos7安装mysql';
+          this.page.url = 'http://www.adanblog.com/java/f4083af9.html';
+          this.page.identifier = 'java/f4083af9.html';
+          this.page.title = 'jdk8新特性之七 Nashorn JavaScript';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';

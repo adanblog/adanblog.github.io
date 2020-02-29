@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="java,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="分享技术，记录人生">
-<meta name="keywords" content="阿丹">
-<meta property="og:type" content="website">
-<meta property="og:title" content="阿丹博客">
-<meta property="og:url" content="http://www.adanblog.com/tags/linux/index.html">
+<meta name="description" content="引言 Java 8 (又称为 jdk 1.8) 是 Java 语言开发的一个主要版本。java8 新特性非常多，上一节介绍了Java8新特性中的Lambda表达式，本小节继续讲解Java8的新特性之二：方法引用。方法引用提供了非常有用的语法，可以直接引用已有的java类或对象的方法或构造器。方法引用其实也离不开Lambda表达式，与lambda联合使用 ，方法引用可以使语言的构造更加紧凑简洁，减少">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jdk8新特性之二方法引用">
+<meta property="og:url" content="http://www.adanblog.com/java/282489d7.html">
 <meta property="og:site_name" content="阿丹博客">
-<meta property="og:description" content="分享技术，记录人生">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:description" content="引言 Java 8 (又称为 jdk 1.8) 是 Java 语言开发的一个主要版本。java8 新特性非常多，上一节介绍了Java8新特性中的Lambda表达式，本小节继续讲解Java8的新特性之二：方法引用。方法引用提供了非常有用的语法，可以直接引用已有的java类或对象的方法或构造器。方法引用其实也离不开Lambda表达式，与lambda联合使用 ，方法引用可以使语言的构造更加紧凑简洁，减少">
+<meta property="og:locale" content="java">
+<meta property="og:updated_time" content="2020-02-29T11:55:31.617Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿丹博客">
-<meta name="twitter:description" content="分享技术，记录人生">
+<meta name="twitter:title" content="jdk8新特性之二方法引用">
+<meta name="twitter:description" content="引言 Java 8 (又称为 jdk 1.8) 是 Java 语言开发的一个主要版本。java8 新特性非常多，上一节介绍了Java8新特性中的Lambda表达式，本小节继续讲解Java8的新特性之二：方法引用。方法引用提供了非常有用的语法，可以直接引用已有的java类或对象的方法或构造器。方法引用其实也离不开Lambda表达式，与lambda联合使用 ，方法引用可以使语言的构造更加紧凑简洁，减少">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://www.adanblog.com/tags/linux/">
+  <link rel="canonical" href="http://www.adanblog.com/java/282489d7.html">
 
 
 
 
 
-  <title>标签: linux | 阿丹博客</title>
+  <title>jdk8新特性之二方法引用 | 阿丹博客</title>
   
 
 
@@ -147,14 +148,14 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="java">
 
   
   
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -294,104 +295,254 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>linux<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.adanblog.com/java/282489d7.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿丹">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿丹博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/linuxs/3cbebd87.html" itemprop="url">
-              
-                <span itemprop="name">linux中安装nginx</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">jdk8新特性之二方法引用</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-12-19T15:26:20+08:00" content="2019-12-19">
-          12-19
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-29T19:49:01+08:00">
+                2020-02-29
+              </time>
+            
 
-    </header>
-  </article>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/java/282489d7.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="java/282489d7.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><blockquote>
+<p>Java 8 (又称为 jdk 1.8) 是 Java 语言开发的一个主要版本。java8 新特性非常多，上一节介绍了Java8新特性中的Lambda表达式，<br>本小节继续讲解Java8的新特性之二：方法引用。<br>方法引用提供了非常有用的语法，可以直接引用已有的java类或对象的方法或构造器。方法引用其实也离不开Lambda表达式，<br>与lambda联合使用 ，方法引用可以使语言的构造更加紧凑简洁，减少冗余代码。</p>
+</blockquote>
+<a id="more"></a>
+
+<h4 id="方法引用的分类"><a href="#方法引用的分类" class="headerlink" title="方法引用的分类"></a>方法引用的分类</h4><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>语法</th>
+<th>对应lambda表达式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>构造器引用</td>
+<td>Class::new</td>
+<td>(args) -&gt; new 类名(args)</td>
+</tr>
+<tr>
+<td>静态方法引用</td>
+<td>Class::static_method</td>
+<td>(args) -&gt; 类名.static_method(args)</td>
+</tr>
+<tr>
+<td>对象方法引用</td>
+<td>Class::method</td>
+<td>(inst,args) -&gt; 类名.method(args)</td>
+</tr>
+<tr>
+<td>实例方法引用</td>
+<td>instance::method</td>
+<td>(args) -&gt; instance.method(args)</td>
+</tr>
+</tbody></table>
+<h4 id="方法引用例子："><a href="#方法引用例子：" class="headerlink" title="方法引用例子："></a>方法引用例子：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.adanblog.demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * java新特性之方法引用</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> www.adanblog.com</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodReference</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//1.构造器引用,它的语法是Class::new，或者更一般的Class&lt; T &gt;::new实例如下：</span></span><br><span class="line">		<span class="comment">//我们使用lambda表达式来的话可以写成下面这样</span></span><br><span class="line">		<span class="comment">//Fun&lt;MethodReference&gt; fun=()-&gt; new MethodReference();</span></span><br><span class="line">		<span class="comment">//MethodReference mr=MethodReference.create(fun);</span></span><br><span class="line">		<span class="comment">//但我们可以根据简化，它的语法是Class::new，或者更一般的Class&lt; T &gt;::new实例如下：</span></span><br><span class="line">		MethodReference mr=MethodReference.create(MethodReference :: <span class="keyword">new</span>);</span><br><span class="line">		List&lt;MethodReference&gt; list=Arrays.asList(mr);</span><br><span class="line">		<span class="comment">//2.静态方法引用：它的语法是Class::static_method，实例如下：</span></span><br><span class="line">		list.forEach(MethodReference :: collide);</span><br><span class="line">		<span class="comment">//3.对象方法引用(特定类的任意对象的方法引用)：它的语法是Class::method实例如下：</span></span><br><span class="line">		list.forEach(MethodReference :: repair);</span><br><span class="line">		<span class="comment">//4.实例方法引用(特定对象的方法引用)：它的语法是instance::method实例如下：</span></span><br><span class="line">		MethodReference mr2=MethodReference.create(MethodReference :: <span class="keyword">new</span>);</span><br><span class="line">		list.forEach( mr2::follow );</span><br><span class="line"></span><br><span class="line">		<span class="comment">//我们将 System.out::println 方法作为静态方法来引用。</span></span><br><span class="line">		List&lt;String&gt; names = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        names.add(<span class="string">"Google"</span>);</span><br><span class="line">	    names.add(<span class="string">"Runoob"</span>);</span><br><span class="line">	    names.add(<span class="string">"Taobao"</span>);</span><br><span class="line">	    names.add(<span class="string">"Baidu"</span>);</span><br><span class="line">	    names.add(<span class="string">"Sina"</span>);</span><br><span class="line">	    names.forEach(System.out::println);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Fun</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">	    <span class="function">T <span class="title">get</span><span class="params">()</span></span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> MethodReference <span class="title">create</span><span class="params">(Fun&lt;MethodReference&gt; fun)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> fun.get();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">collide</span><span class="params">(MethodReference collided)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"Collided "</span> + collided.toString());</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">follow</span><span class="params">(<span class="keyword">final</span> MethodReference another)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Following the "</span> + another.toString());</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">repair</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Repaired "</span> + <span class="keyword">this</span>.toString());</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"test "</span> +str);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行后输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Collided com.adanblog.demo.MethodReference@65ab7765</span><br><span class="line">Repaired com.adanblog.demo.MethodReference@65ab7765</span><br><span class="line">Following the com.adanblog.demo.MethodReference@65ab7765</span><br><span class="line">Google</span><br><span class="line">Runoob</span><br><span class="line">Taobao</span><br><span class="line">Baidu</span><br><span class="line">Sina</span><br></pre></td></tr></table></figure>
 
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/mysql/d5344ff8.html" itemprop="url">
-              
-                <span itemprop="name">centos7安装mysql</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-12-11T19:25:06+08:00" content="2019-12-11">
-          12-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/springBoot/d95f9e5a.html" itemprop="url">
-              
-                <span itemprop="name">springBoot java -jar xxx.jar 报 “xxx中没有主清单属性”</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-11-13T11:18:09+08:00" content="2019-11-13">
-          11-13
-        </time>
+      <div>
+	  
+	    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:22px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+	  
       </div>
-
-    </header>
-  </article>
-
-
-      
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    阿丹
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.adanblog.com/java/282489d7.html" title="jdk8新特性之二方法引用">http://www.adanblog.com/java/282489d7.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/java/325e79dc.html" rel="next" title="jdk8新特性之Lambda表达式">
+                <i class="fa fa-chevron-left"></i> jdk8新特性之Lambda表达式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/java/6ea1033e.html" rel="prev" title="jdk8新特性之三函数式接口">
+                jdk8新特性之三函数式接口 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -399,6 +550,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -419,8 +584,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -492,6 +666,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法引用的分类"><span class="nav-number">1.1.</span> <span class="nav-text">方法引用的分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法引用例子："><span class="nav-number">1.2.</span> <span class="nav-text">方法引用例子：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -642,6 +832,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -659,6 +853,18 @@
       <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://www.adanblog.com/java/282489d7.html';
+          this.page.identifier = 'java/282489d7.html';
+          this.page.title = 'jdk8新特性之二方法引用';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
