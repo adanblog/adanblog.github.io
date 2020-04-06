@@ -1,6 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>jdk8新特性之九Base64</title>
+    <url>/java/e9dc4b97.html</url>
+    <content><![CDATA[<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><blockquote>
+<p>Java 8 内置了 Base64 编码的编码器和解码器，Base64编码已经成为Java类库的标准。<br>Base64工具类提供了一套静态方法获取下面三种BASE64编解码器：</p>
+<ul>
+<li>基本：输出被映射到一组字符A-Za-z0-9+/，编码不添加任何行标，输出的解码仅支持A-Za-z0-9+/。</li>
+<li>URL：输出映射到一组字符A-Za-z0-9+_，输出是URL和文件。</li>
+<li>MIME：输出隐射到MIME友好格式。输出每行不超过76字符，并且使用“\n’作为分割。编码输出最后没有行分割。</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="内嵌类"><a href="#内嵌类" class="headerlink" title="内嵌类"></a>内嵌类</h3><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>内嵌类 &amp; 描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>static class Base64.Decoder<br>该类实现一个解码器用于，使用Base64编码来解码字节数据。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>static class Base64.Encoder<br>该类实现一个编码器，使用Base64编码来编码字节数据。</td>
+</tr>
+</tbody></table>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>方法名 &amp; 描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>static Base64.Decoder getDecoder()<br>返回一个 Base64.Decoder,解码使用基本型 base64 编码方案。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>static Base6+4.Encoder getEncoder()<br>返回一个Base64.Encoder,编码使用基本型 base64 编码方案。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>static Base64.Decoder getMimeDecoder()<br>返回一个 Base64.Decoder ，解码使用 MIME 型 base64 编码方案。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>static Base64.Encoder getMimeEncoder()<br>返回一个 Base64.Encoder ，编码使用 MIME 型 base64 编码方案。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>static Base64.Encoder getMimeEncoder(int lineLength, byte[] lineSeparator)<br>返回一个 Base64.Encoder ，编码使用 MIME 型 base64 编码方案，可以通过参数指定每行的长度及行的分隔符。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>static Base64.Decoder getUrlDecoder()<br>返回一个 Base64.Decoder ，解码使用 URL 和文件名安全型 base64 编码方案。</td>
+</tr>
+<tr>
+<td>7</td>
+<td>static Base64.Encoder getUrlEncoder()<br>返回一个 Base64.Encoder ，编码使用 URL 和文件名安全型 base64 编码方案。</td>
+</tr>
+</tbody></table>
+<h3 id="Base64-实例"><a href="#Base64-实例" class="headerlink" title="Base64 实例"></a>Base64 实例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.adanblog.demo;</span><br><span class="line"></span><br><span class="line">import java.io.UnsupportedEncodingException;</span><br><span class="line">import java.util.Base64;</span><br><span class="line">import java.util.UUID;</span><br><span class="line"></span><br><span class="line">public class Base64Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		String str = &quot;我的？啊啊runoob?java8&quot;;</span><br><span class="line">		try &#123;</span><br><span class="line">			// 使用基本编码</span><br><span class="line">			String base64encodedString = Base64.getEncoder().encodeToString(str.getBytes(&quot;utf-8&quot;));</span><br><span class="line">			System.out.println(&quot;Base64 编码字符串 (基本) :&quot; + base64encodedString);</span><br><span class="line">			// 解码</span><br><span class="line">			byte[] bytes = Base64.getDecoder().decode(base64encodedString);</span><br><span class="line">			System.out.println(&quot;原始字符串: &quot; + new String(bytes, &quot;utf-8&quot;));</span><br><span class="line"></span><br><span class="line">			// 使用URL编码</span><br><span class="line">			String base64urlencodedString = Base64.getUrlEncoder().encodeToString(str.getBytes(&quot;utf-8&quot;));</span><br><span class="line">			System.out.println(&quot;Base64 编码字符串 (url) :&quot; + base64urlencodedString);</span><br><span class="line">			// 解码</span><br><span class="line">			byte[] bytes2 = Base64.getUrlDecoder().decode(base64urlencodedString);</span><br><span class="line">			System.out.println(&quot;原始字符串: &quot; + new String(bytes2, &quot;utf-8&quot;));</span><br><span class="line"></span><br><span class="line">			StringBuilder stringBuilder = new StringBuilder();</span><br><span class="line">			for (int i = 0; i &lt; 10; ++i) &#123;</span><br><span class="line">				stringBuilder.append(UUID.randomUUID().toString());</span><br><span class="line">			&#125;</span><br><span class="line">			byte[] bytes3=stringBuilder.toString().getBytes(&quot;utf-8&quot;);</span><br><span class="line">			//使用MIME编码</span><br><span class="line">			String base64MimeEncodedString =Base64.getMimeEncoder().encodeToString(bytes3);</span><br><span class="line">			System.out.println(&quot;Base64 编码字符串 (MIME) :&quot; + base64MimeEncodedString);</span><br><span class="line">			byte[] bytes4 = Base64.getMimeDecoder().decode(base64MimeEncodedString);</span><br><span class="line">			System.out.println(&quot;原始字符串: &quot; + new String(bytes4, &quot;utf-8&quot;));</span><br><span class="line">		&#125; catch (UnsupportedEncodingException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行上面结果输出：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Base64 编码字符串 (基本) :5oiR55qE77yf5ZWK5ZWKcnVub29iP2phdmE4</span><br><span class="line">原始字符串: 我的？啊啊runoob?java8</span><br><span class="line">Base64 编码字符串 (url) :5oiR55qE77yf5ZWK5ZWKcnVub29iP2phdmE4</span><br><span class="line">原始字符串: 我的？啊啊runoob?java8</span><br><span class="line">Base64 编码字符串 (MIME) :NmFlNjBkNjEtNGEyMy00YTEzLTllOTUtM2JmODRmOWQ5ZDA3NzFiZjczZmYtM2QzOC00MGZlLThk</span><br><span class="line">YjMtZDE2MDZmNGIzODg1NTA1ODM3NDktNGM2YS00YzM2LWI2ODctYTQ5YmFlYjE3YzY0ZDRkMmI0</span><br><span class="line">N2UtOTY1MC00Yjc5LWJlOWItZTdiY2RlN2ZiMzBjYzUyNjhjODEtNWVjMi00YzE3LTg0NmMtZWVk</span><br><span class="line">MDk2ZDIxMzQ3ZDY4ZGEyNmUtODBlOC00NjhiLThhMjUtYTk5NGFjYTk3NjAxMDAyNTYyOWYtY2M3</span><br><span class="line">Yy00MzY0LWEzNWYtNGY0MWI5M2I5M2ViMTY1ODk1NjgtZjViMC00MGFjLWJkMGItMzYzMDVkNTVm</span><br><span class="line">NDgzOWExYjYyMzEtMzc5OC00MjJmLWE2YjAtZmM2MjMzMGFiOGM5MjdjOTVhNjktN2I2My00NDFj</span><br><span class="line">LWE1ZjktMjYwYjU3MGI2YTVm</span><br><span class="line">原始字符串: 6ae60d61-4a23-4a13-9e95-3bf84f9d9d0771bf73ff-3d38-40fe-8db3-d1606f4b388550583749-4c6a-4c36-b687-a49baeb17c64d4d2b47e-9650-4b79-be9b-e7bcde7fb30cc5268c81-5ec2-4c17-846c-eed096d21347d68da26e-80e8-468b-8a25-a994aca976010025629f-cc7c-4364-a35f-4f41b93b93eb16589568-f5b0-40ac-bd0b-36305d55f4839a1b6231-3798-422f-a6b0-fc62330ab8c927c95a69-7b63-441c-a5f9-260b570b6a5f</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>jdk8新特性之八日期时间API</title>
     <url>/java/2a9754bc.html</url>
     <content><![CDATA[<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><blockquote>
@@ -98,84 +176,6 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">LocalDateTime dateTime=LocalDateTime.now();</span><br><span class="line">String str=dateTime.format(DateTimeFormatter.ISO_DATE_TIME);</span><br><span class="line">System.out.println(str);</span><br><span class="line">str = dateTime.format(DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd HH:mm:ss&quot;));</span><br><span class="line">System.out.println(str);</span><br></pre></td></tr></table></figure>
 
 <p>可以使用DateTimeFormatter预置的格式，也可以通过DateTimeFormatter.ofPattern方法来指定格式。</p>
-]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>jdk8新特性之九Base64</title>
-    <url>/java/e9dc4b97.html</url>
-    <content><![CDATA[<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><blockquote>
-<p>Java 8 内置了 Base64 编码的编码器和解码器，Base64编码已经成为Java类库的标准。<br>Base64工具类提供了一套静态方法获取下面三种BASE64编解码器：</p>
-<ul>
-<li>基本：输出被映射到一组字符A-Za-z0-9+/，编码不添加任何行标，输出的解码仅支持A-Za-z0-9+/。</li>
-<li>URL：输出映射到一组字符A-Za-z0-9+_，输出是URL和文件。</li>
-<li>MIME：输出隐射到MIME友好格式。输出每行不超过76字符，并且使用“\n’作为分割。编码输出最后没有行分割。</li>
-</ul>
-</blockquote>
-<a id="more"></a>
-
-<h3 id="内嵌类"><a href="#内嵌类" class="headerlink" title="内嵌类"></a>内嵌类</h3><table>
-<thead>
-<tr>
-<th>序号</th>
-<th>内嵌类 &amp; 描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>static class Base64.Decoder<br>该类实现一个解码器用于，使用Base64编码来解码字节数据。</td>
-</tr>
-<tr>
-<td>2</td>
-<td>static class Base64.Encoder<br>该类实现一个编码器，使用Base64编码来编码字节数据。</td>
-</tr>
-</tbody></table>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><table>
-<thead>
-<tr>
-<th>序号</th>
-<th>方法名 &amp; 描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>static Base64.Decoder getDecoder()<br>返回一个 Base64.Decoder,解码使用基本型 base64 编码方案。</td>
-</tr>
-<tr>
-<td>2</td>
-<td>static Base6+4.Encoder getEncoder()<br>返回一个Base64.Encoder,编码使用基本型 base64 编码方案。</td>
-</tr>
-<tr>
-<td>3</td>
-<td>static Base64.Decoder getMimeDecoder()<br>返回一个 Base64.Decoder ，解码使用 MIME 型 base64 编码方案。</td>
-</tr>
-<tr>
-<td>4</td>
-<td>static Base64.Encoder getMimeEncoder()<br>返回一个 Base64.Encoder ，编码使用 MIME 型 base64 编码方案。</td>
-</tr>
-<tr>
-<td>5</td>
-<td>static Base64.Encoder getMimeEncoder(int lineLength, byte[] lineSeparator)<br>返回一个 Base64.Encoder ，编码使用 MIME 型 base64 编码方案，可以通过参数指定每行的长度及行的分隔符。</td>
-</tr>
-<tr>
-<td>6</td>
-<td>static Base64.Decoder getUrlDecoder()<br>返回一个 Base64.Decoder ，解码使用 URL 和文件名安全型 base64 编码方案。</td>
-</tr>
-<tr>
-<td>7</td>
-<td>static Base64.Encoder getUrlEncoder()<br>返回一个 Base64.Encoder ，编码使用 URL 和文件名安全型 base64 编码方案。</td>
-</tr>
-</tbody></table>
-<h3 id="Base64-实例"><a href="#Base64-实例" class="headerlink" title="Base64 实例"></a>Base64 实例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.adanblog.demo;</span><br><span class="line"></span><br><span class="line">import java.io.UnsupportedEncodingException;</span><br><span class="line">import java.util.Base64;</span><br><span class="line">import java.util.UUID;</span><br><span class="line"></span><br><span class="line">public class Base64Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		String str = &quot;我的？啊啊runoob?java8&quot;;</span><br><span class="line">		try &#123;</span><br><span class="line">			// 使用基本编码</span><br><span class="line">			String base64encodedString = Base64.getEncoder().encodeToString(str.getBytes(&quot;utf-8&quot;));</span><br><span class="line">			System.out.println(&quot;Base64 编码字符串 (基本) :&quot; + base64encodedString);</span><br><span class="line">			// 解码</span><br><span class="line">			byte[] bytes = Base64.getDecoder().decode(base64encodedString);</span><br><span class="line">			System.out.println(&quot;原始字符串: &quot; + new String(bytes, &quot;utf-8&quot;));</span><br><span class="line"></span><br><span class="line">			// 使用URL编码</span><br><span class="line">			String base64urlencodedString = Base64.getUrlEncoder().encodeToString(str.getBytes(&quot;utf-8&quot;));</span><br><span class="line">			System.out.println(&quot;Base64 编码字符串 (url) :&quot; + base64urlencodedString);</span><br><span class="line">			// 解码</span><br><span class="line">			byte[] bytes2 = Base64.getUrlDecoder().decode(base64urlencodedString);</span><br><span class="line">			System.out.println(&quot;原始字符串: &quot; + new String(bytes2, &quot;utf-8&quot;));</span><br><span class="line"></span><br><span class="line">			StringBuilder stringBuilder = new StringBuilder();</span><br><span class="line">			for (int i = 0; i &lt; 10; ++i) &#123;</span><br><span class="line">				stringBuilder.append(UUID.randomUUID().toString());</span><br><span class="line">			&#125;</span><br><span class="line">			byte[] bytes3=stringBuilder.toString().getBytes(&quot;utf-8&quot;);</span><br><span class="line">			//使用MIME编码</span><br><span class="line">			String base64MimeEncodedString =Base64.getMimeEncoder().encodeToString(bytes3);</span><br><span class="line">			System.out.println(&quot;Base64 编码字符串 (MIME) :&quot; + base64MimeEncodedString);</span><br><span class="line">			byte[] bytes4 = Base64.getMimeDecoder().decode(base64MimeEncodedString);</span><br><span class="line">			System.out.println(&quot;原始字符串: &quot; + new String(bytes4, &quot;utf-8&quot;));</span><br><span class="line">		&#125; catch (UnsupportedEncodingException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>运行上面结果输出：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Base64 编码字符串 (基本) :5oiR55qE77yf5ZWK5ZWKcnVub29iP2phdmE4</span><br><span class="line">原始字符串: 我的？啊啊runoob?java8</span><br><span class="line">Base64 编码字符串 (url) :5oiR55qE77yf5ZWK5ZWKcnVub29iP2phdmE4</span><br><span class="line">原始字符串: 我的？啊啊runoob?java8</span><br><span class="line">Base64 编码字符串 (MIME) :NmFlNjBkNjEtNGEyMy00YTEzLTllOTUtM2JmODRmOWQ5ZDA3NzFiZjczZmYtM2QzOC00MGZlLThk</span><br><span class="line">YjMtZDE2MDZmNGIzODg1NTA1ODM3NDktNGM2YS00YzM2LWI2ODctYTQ5YmFlYjE3YzY0ZDRkMmI0</span><br><span class="line">N2UtOTY1MC00Yjc5LWJlOWItZTdiY2RlN2ZiMzBjYzUyNjhjODEtNWVjMi00YzE3LTg0NmMtZWVk</span><br><span class="line">MDk2ZDIxMzQ3ZDY4ZGEyNmUtODBlOC00NjhiLThhMjUtYTk5NGFjYTk3NjAxMDAyNTYyOWYtY2M3</span><br><span class="line">Yy00MzY0LWEzNWYtNGY0MWI5M2I5M2ViMTY1ODk1NjgtZjViMC00MGFjLWJkMGItMzYzMDVkNTVm</span><br><span class="line">NDgzOWExYjYyMzEtMzc5OC00MjJmLWE2YjAtZmM2MjMzMGFiOGM5MjdjOTVhNjktN2I2My00NDFj</span><br><span class="line">LWE1ZjktMjYwYjU3MGI2YTVm</span><br><span class="line">原始字符串: 6ae60d61-4a23-4a13-9e95-3bf84f9d9d0771bf73ff-3d38-40fe-8db3-d1606f4b388550583749-4c6a-4c36-b687-a49baeb17c64d4d2b47e-9650-4b79-be9b-e7bcde7fb30cc5268c81-5ec2-4c17-846c-eed096d21347d68da26e-80e8-468b-8a25-a994aca976010025629f-cc7c-4364-a35f-4f41b93b93eb16589568-f5b0-40ac-bd0b-36305d55f4839a1b6231-3798-422f-a6b0-fc62330ab8c927c95a69-7b63-441c-a5f9-260b570b6a5f</span><br></pre></td></tr></table></figure>
-
 ]]></content>
       <categories>
         <category>java</category>
