@@ -1017,8 +1017,8 @@
         <category>mysql</category>
       </categories>
       <tags>
-        <tag>mysql</tag>
         <tag>linux</tag>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -1369,8 +1369,9 @@
   <entry>
     <title>关于此博客</title>
     <url>/about/4a684914.html</url>
-    <content><![CDATA[<p>我是一名Java程序员，目前就职广州某能源公司，负责公司技术架构与项目管理。<br>此博客记录我对技术的学习与理解。</p>
-<h3 id="关于阿丹博客"><a href="#关于阿丹博客" class="headerlink" title="关于阿丹博客"></a>关于阿丹博客</h3><p>下面阿丹的个人博客，记录所有学习和工作中的博文，欢迎大家前去逛逛。<br>个人博客：<a href="http://www.adanblog.com/">http://www.adanblog.com/</a><br>GitHub：<a href="https://github.com/adanblog" target="_blank" rel="noopener">https://github.com/adanblog</a><br><img src="https://adanblog.github.io/images/dibutuiguang.jpg" alt></p>
+    <content><![CDATA[<blockquote>
+<p><strong>关于阿丹博客</strong><br> 下面阿丹的个人博客，记录所有学习和工作中的博文，欢迎大家前去逛逛。<br>个人博客：<a href="http://www.adanblog.com/">http://www.adanblog.com/</a><br><img src="https://adanblog.github.io/images/dibutuiguang.jpg" alt></p>
+</blockquote>
 ]]></content>
   </entry>
 </search>
